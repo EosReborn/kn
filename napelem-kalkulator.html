@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="hu"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Napelem Kalkulátor | Knauz Energie</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#474646",
+                        "primary-fixed-dim": "#a0d663",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary-container": "#518116",
+                        "secondary-fixed-dim": "#ffb95c",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#43493a",
+                        "inverse-primary": "#a0d663",
+                        "tertiary": "#5d5c5b",
+                        "inverse-surface": "#2b3135",
+                        "surface-alt": "#FFFFFF",
+                        "growth-green": "#7BB52D",
+                        "tertiary-container": "#767474",
+                        "inverse-on-surface": "#ecf1f6",
+                        "on-secondary-container": "#6a4200",
+                        "secondary-container": "#ffa924",
+                        "outline-variant": "#c3c9b5",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#737968",
+                        "surface-dim": "#d5dbdf",
+                        "on-error-container": "#93000a",
+                        "background": "#f5faff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "surface": "#f5faff",
+                        "surface-tint": "#3e6a00",
+                        "primary": "#3c6700",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#e4e9ee",
+                        "surface-variant": "#dee3e8",
+                        "secondary": "#845400",
+                        "surface-container-highest": "#dee3e8",
+                        "on-secondary-fixed": "#2a1700",
+                        "slate-text": "#334155",
+                        "on-tertiary-container": "#f7feff",
+                        "on-primary-fixed-variant": "#2d5000",
+                        "surface-container-low": "#eff4f9",
+                        "error-container": "#ffdad6",
+                        "solar-gold": "#FBB120",
+                        "on-background": "#171c20",
+                        "on-primary-container": "#f9ffeb",
+                        "surface-container": "#e9eef3",
+                        "on-primary-fixed": "#0f2000",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f5faff",
+                        "secondary-fixed": "#ffddb7",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#bbf37c",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#171c20"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "section-padding": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display": ["Montserrat"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "button": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .step-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .progress-bar { transition: width 0.6s ease-in-out; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #3c6700;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: -8px;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 8px;
+            background: #dee3e8;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-sm h-20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary">Knauz Energie</div>
+<div class="hidden md:flex space-x-gutter">
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="index.html">Napelem</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Hőszivattyú</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Töltés</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Szolgáltatások</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="hidden lg:block text-primary font-bold font-button">+49 123 456789</span>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-lg font-button hover:opacity-90 active:scale-95 transition-all">Get a Quote</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-section-padding px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<!-- Header Section -->
+<div class="mb-12 text-center">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-caps mb-4">INGYENES ÉS GYORS</span>
+<h1 class="font-display text-display mb-4">Napelem Kalkulátor</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Számolja ki percek alatt leendő napelemes rendszerének méretét és várható megtérülését!</p>
+</div>
+<!-- Main Calculator Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left: Form Step Section -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-outline-variant relative overflow-hidden">
+<!-- Progress Bar -->
+<div class="absolute top-0 left-0 w-full h-1.5 bg-surface-variant">
+<div class="progress-bar h-full bg-primary" id="progress" style="width: 25%"></div>
+</div>
+<form id="calc-form">
+<!-- Step 1: Energy Usage -->
+<div class="step-transition" id="step-1">
+<div class="flex items-center gap-3 mb-8">
+<span class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">1</span>
+<h2 class="font-headline-md text-headline-md">Energiafogyasztás</h2>
+</div>
+<div class="space-y-12">
+<div>
+<label class="block text-on-surface-variant font-label-caps mb-4">HAVI VILLANYSZÁMLA (HUF)</label>
+<input class="w-full h-2 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" id="monthly-bill" max="100000" min="5000" step="5000" type="range" value="25000"/>
+<div class="flex justify-between mt-4">
+<span class="text-headline-md font-bold text-primary"><span id="bill-value">25 000</span> Ft</span>
+<span class="text-body-md text-on-surface-variant">~ 285 kWh / hó</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="p-6 rounded-lg border-2 border-primary bg-primary-fixed-dim/10 text-primary flex flex-col items-center gap-2 transition-all" type="button">
+<span class="material-symbols-outlined text-4xl">home</span>
+<span class="font-bold">Családi ház</span>
+</button>
+<button class="p-6 rounded-lg border-2 border-outline-variant hover:border-primary transition-all flex flex-col items-center gap-2" type="button">
+<span class="material-symbols-outlined text-4xl">business</span>
+<span class="font-bold">Iroda / Üzlet</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="flex justify-between mt-12 pt-8 border-t border-outline-variant">
+<button class="px-8 py-3 rounded-lg font-button text-on-surface-variant hover:bg-surface-variant transition-colors" type="button">Vissza</button>
+<button class="px-10 py-3 rounded-lg font-button bg-primary text-on-primary hover:opacity-90 active:scale-95 transition-all" type="button">Következő lépés</button>
+</div>
+</form>
+</div>
+<!-- Right: Visual Feedback / Summary -->
+<div class="lg:col-span-5 space-y-gutter">
+<!-- Quick Summary Card -->
+<div class="bg-primary text-on-primary rounded-xl p-8 shadow-lg relative overflow-hidden">
+
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md mb-6">Becsült eredmények</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-center border-b border-primary-container pb-4">
+<span class="font-body-md opacity-90">Szükséges rendszerméret</span>
+<span class="text-headline-md font-bold">4.2 kWp</span>
+</div>
+<div class="flex justify-between items-center border-b border-primary-container pb-4">
+<span class="font-body-md opacity-90">Napelemek száma</span>
+<span class="text-headline-md font-bold">10 db</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md opacity-90">Megtakarítás évente</span>
+<span class="text-headline-md font-bold text-solar-gold">~ 340.000 Ft</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Technical Detail Bento Items -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant">
+<span class="material-symbols-outlined text-growth-green mb-2" style="font-variation-settings: 'FILL' 1;">eco</span>
+<div class="font-label-caps text-on-surface-variant mb-1">CO2 MEGTAKARÍTÁS</div>
+<div class="text-headline-md font-bold">1.8 tonna</div>
+<div class="text-body-md text-on-surface-variant">évente / rendszer</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant">
+<span class="material-symbols-outlined text-solar-gold mb-2" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<div class="font-label-caps text-on-surface-variant mb-1">TERMELÉS</div>
+<div class="text-headline-md font-bold">4850 kWh</div>
+<div class="text-body-md text-on-surface-variant">éves hozam</div>
+</div>
+</div>
+<!-- Trust Banner -->
+<div class="glass-card rounded-xl p-6 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container">verified</span>
+</div>
+<div>
+<div class="font-bold">Mérnöki Garancia</div>
+<p class="text-body-md text-on-surface-variant">Számításaink a helyi meteorológiai adatokon alapulnak.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Details Section -->
+<section class="mt-section-padding grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-8 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-lg transition-all group">
+<div class="mb-4 text-primary group-hover:scale-110 transition-transform inline-block">
+<span class="material-symbols-outlined text-4xl">roofing</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Tetőtípus</h3>
+<p class="text-body-md text-on-surface-variant mb-4">Cserép, zsindely vagy lapostető? Minden felületre van megoldásunk.</p>
+<a class="text-primary font-button flex items-center gap-2" href="#">Részletek <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<div class="p-8 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-lg transition-all group">
+<div class="mb-4 text-primary group-hover:scale-110 transition-transform inline-block">
+<span class="material-symbols-outlined text-4xl">compass_calibration</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Tájolás</h3>
+<p class="text-body-md text-on-surface-variant mb-4">Déli tájolás az ideális, de a K-Ny tájolás is kiváló hozamot biztosít.</p>
+<a class="text-primary font-button flex items-center gap-2" href="#">Részletek <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<div class="p-8 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-lg transition-all group">
+<div class="mb-4 text-primary group-hover:scale-110 transition-transform inline-block">
+<span class="material-symbols-outlined text-4xl">battery_charging_full</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Akkumulátor</h3>
+<p class="text-body-md text-on-surface-variant mb-4">Növelje az önfogyasztását tárolórendszerrel a 24 órás energiáért.</p>
+<a class="text-primary font-button flex items-center gap-2" href="#">Részletek <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest w-full pt-section-padding pb-unit">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-6">Knauz Energie</div>
+<p class="text-body-md text-on-surface-variant">A jövő energiája, ma. Prémium napelemes rendszerek és energetikai megoldások.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Termékek</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Napelem rendszerek</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Hőszivattyúk</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Villanyautó töltés</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Ügyfélszolgálat</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="kapcsolat.html">Kapcsolat</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">FAQ</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="palyazatok.html">Pályázatok</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Jogi nyilatkozat</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Adatvédelmi tájékoztató</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">ÁSZF</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Impresszum</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop border-t border-outline-variant mt-16 pt-8 text-center text-body-md text-on-surface-variant">
+            © 2024 Knauz Energie GmbH. All rights reserved.
+        </div>
+</footer>
+<script>
+        const billSlider = document.getElementById('monthly-bill');
+        const billDisplay = document.getElementById('bill-value');
+
+        billSlider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            billDisplay.textContent = val.toLocaleString('hu-HU');
+            
+            // Simple logic for the demo visual feedback
+            // Update other results dynamically if this were a full app
+        });
+
+        // Simple Step Logic Interaction
+        const formButtons = document.querySelectorAll('#calc-form button');
+        formButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => btn.style.transform = 'scale(1)', 100);
+            });
+        });
+    </script>
+</body></html>
