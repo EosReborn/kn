@@ -3,10 +3,11 @@
 <html lang="hu"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Napelem Kalkulátor | Knauz Energie</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -99,49 +100,56 @@
                         "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
                         "button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
                     }
-                },
-            },
+                }
+            }
         }
     </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
         }
-        .form-input-focus:focus {
-            border-bottom: 2px solid #3c6700;
-            outline: none;
+        .step-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .progress-bar { transition: width 0.6s ease-in-out; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        .transition-lift {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #3c6700;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: -8px;
         }
-        .transition-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 8px;
+            background: #dee3e8;
+            border-radius: 4px;
         }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md">
+<body class="bg-surface font-body-md text-on-surface">
 <!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 bg-surface-container-lowest dark:bg-surface-dim shadow-sm">
-<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-20">
-<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">
-                Knauz Energie
-            </div>
-<div class="hidden md:flex gap-gutter items-center">
-<a class="font-button text-button text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="index.html">Napelem</a>
-<a class="font-button text-button text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="szolgaltatasok.html">Hőszivattyú</a>
-<a class="font-button text-button text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="szolgaltatasok.html">Töltés</a>
-<a class="font-button text-button text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="szolgaltatasok.html">Szolgáltatások</a>
-<a class="font-button text-button text-primary dark:text-inverse-primary border-b-2 border-primary pb-1" href="kapcsolat.html">Kapcsolat</a>
+<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-sm h-20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary">Knauz Energie</div>
+<div class="hidden md:flex space-x-gutter">
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="index.html">Napelem</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Hőszivattyú</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Töltés</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Szolgáltatások</a>
 </div>
 <div class="flex items-center gap-4">
-<span class="hidden lg:block font-button text-button text-secondary font-bold">+49 123 456789</span>
-<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-lg font-button text-button active:opacity-80 active:scale-95 transition-all">
-                    Get a Quote
-                </button>
+<span class="hidden lg:block text-primary font-bold font-button">+36 20 477 1144</span>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-lg font-button hover:opacity-90 active:scale-95 transition-all">Árajánlatot kérek</button>
+</div>
 </div>
 </nav>
-</header>
 <main class="pt-32 pb-section-padding">
 <div class="max-w-container-max mx-auto px-margin-desktop">
 <!-- Hero Section -->
@@ -197,7 +205,7 @@
 </div>
 <div>
 <h3 class="font-label-caps text-label-caps text-outline uppercase">Telefonszám</h3>
-<p class="font-headline-md text-headline-md text-on-surface">+49 123 456789</p>
+<p class="font-headline-md text-headline-md text-on-surface">+36 20 477 1144</p>
 <p class="font-body-md text-body-md text-on-surface-variant">H-P: 08:00 - 17:00</p>
 </div>
 </div>
@@ -249,70 +257,75 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <div class="p-8 bg-surface-container-low rounded-xl">
 <h4 class="font-headline-md text-headline-md text-primary mb-2">Budapest</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">Duna Tower, 1138 Budapest<br/>+36 1 234 5678</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Duna Tower, 1138 Budapest<br/>+36 20 404 3023</p>
 </div>
 <div class="p-8 bg-surface-container-low rounded-xl">
 <h4 class="font-headline-md text-headline-md text-primary mb-2">München</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">Bavariaring 21, 80336 München<br/>+49 89 987 6543</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Bavariaring 21, 80336 München<br/>+36 20 477 1144</p>
 </div>
 <div class="p-8 bg-surface-container-low rounded-xl">
 <h4 class="font-headline-md text-headline-md text-primary mb-2">Wien</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">Praterstraße 31, 1020 Wien<br/>+43 1 876 5432</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Praterstraße 31, 1020 Wien<br/>+36 20 404 3023</p>
 </div>
 </div>
 </div>
 </div>
 </main>
-<!-- Footer -->
-<footer class="w-full pt-section-padding pb-unit bg-surface-container-highest dark:bg-inverse-surface">
-<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter text-on-surface dark:text-inverse-on-surface">
-<div class="flex flex-col gap-4">
-<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Knauz Energie</div>
-<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant">
-                    Prémium megújuló energia megoldások a fenntartható jövőért.
-                </p>
+<footer class="bg-surface-container-highest w-full pt-section-padding pb-unit">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-6">Knauz Energie</div>
+<p class="text-body-md text-on-surface-variant">A jövő energiája, ma. Prémium napelemes rendszerek és energetikai megoldások.</p>
 </div>
-<div class="flex flex-col gap-4">
-<h5 class="font-label-caps text-label-caps text-on-surface">Szolgáltatások</h5>
-<ul class="flex flex-col gap-2 font-body-md text-on-surface-variant dark:text-surface-variant">
-<li><a class="hover:text-on-surface dark:hover:text-on-surface-variant underline" href="palyazatok.html">Napelem Parkok</a></li>
-<li><a class="hover:text-on-surface dark:hover:text-on-surface-variant underline" href="#">Ipari Hőszivattyúk</a></li>
-<li><a class="hover:text-on-surface dark:hover:text-on-surface-variant underline" href="#">E-Mobilitás</a></li>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Termékek</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Napelem rendszerek</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Hőszivattyúk</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Villanyautó töltés</a></li>
 </ul>
 </div>
-<div class="flex flex-col gap-4">
-<h5 class="font-label-caps text-label-caps text-on-surface">Információk</h5>
-<ul class="flex flex-col gap-2 font-body-md text-on-surface-variant dark:text-surface-variant">
-<li><a class="hover:text-on-surface dark:hover:text-on-surface-variant underline" href="#">Adatvédelem</a></li>
-<li><a class="hover:text-on-surface dark:hover:text-on-surface-variant underline" href="#">ÁSZF</a></li>
-<li><a class="hover:text-on-surface dark:hover:text-on-surface-variant underline" href="#">Impresszum</a></li>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Ügyfélszolgálat</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="kapcsolat.html">Kapcsolat</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">FAQ</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="palyazatok.html">Pályázatok</a></li>
 </ul>
 </div>
-<div class="flex flex-col gap-4">
-<h5 class="font-label-caps text-label-caps text-on-surface">Hírlevél</h5>
-<p class="font-body-md text-on-surface-variant dark:text-surface-variant">Iratkozzon fel legfrissebb híreinkre!</p>
-<div class="flex gap-2">
-<input class="bg-surface-container-low border-none rounded-lg p-2 w-full" placeholder="Email" type="text"/>
-<button class="bg-primary text-on-primary p-2 rounded-lg">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Jogi nyilatkozat</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Adatvédelmi tájékoztató</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">ÁSZF</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Impresszum</a></li>
+</ul>
 </div>
 </div>
-</div>
-<div class="max-w-container-max mx-auto px-margin-desktop mt-12 pt-8 border-t border-surface-variant text-center font-body-md text-on-surface-variant">
-            © 2024 Knauz Energie GmbH. Minden jog fenntartva.
+<div class="max-w-container-max mx-auto px-margin-desktop border-t border-outline-variant mt-16 pt-8 text-center text-body-md text-on-surface-variant">
+            © 2024 Knauz Energie GmbH. All rights reserved.
         </div>
 </footer>
 <script>
-        // Micro-interaction for form inputs
-        const inputs = document.querySelectorAll('input, textarea, select');
-        inputs.forEach(input => {
-            input.addEventListener('focus', () => {
-                input.parentElement.querySelector('label').classList.add('text-primary');
-            });
-            input.addEventListener('blur', () => {
-                input.parentElement.querySelector('label').classList.remove('text-primary');
+        const billSlider = document.getElementById('monthly-bill');
+        const billDisplay = document.getElementById('bill-value');
+
+        billSlider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            billDisplay.textContent = val.toLocaleString('hu-HU');
+            
+            // Simple logic for the demo visual feedback
+            // Update other results dynamically if this were a full app
+        });
+
+        // Simple Step Logic Interaction
+        const formButtons = document.querySelectorAll('#calc-form button');
+        formButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => btn.style.transform = 'scale(1)', 100);
             });
         });
     </script>
-</body></html>
+</body>
+</html>

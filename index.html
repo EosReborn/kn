@@ -3,7 +3,7 @@
 <html lang="hu"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Knauz Energie - Velünk zöldebb jövőt építhet</title>
+<title>Napelem Kalkulátor | Knauz Energie</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -14,57 +14,57 @@
             theme: {
                 extend: {
                     "colors": {
-                        "on-tertiary-container": "#f7feff",
-                        "on-secondary": "#ffffff",
-                        "surface-container": "#e9eef3",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "primary-fixed-dim": "#a0d663",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary-container": "#518116",
+                        "secondary-fixed-dim": "#ffb95c",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#43493a",
+                        "inverse-primary": "#a0d663",
+                        "tertiary": "#5d5c5b",
+                        "inverse-surface": "#2b3135",
+                        "surface-alt": "#FFFFFF",
+                        "growth-green": "#7BB52D",
+                        "tertiary-container": "#767474",
+                        "inverse-on-surface": "#ecf1f6",
+                        "on-secondary-container": "#6a4200",
+                        "secondary-container": "#ffa924",
+                        "outline-variant": "#c3c9b5",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#737968",
+                        "surface-dim": "#d5dbdf",
+                        "on-error-container": "#93000a",
+                        "background": "#f5faff",
+                        "on-secondary-fixed-variant": "#653e00",
                         "surface": "#f5faff",
                         "surface-tint": "#3e6a00",
-                        "surface-bright": "#f5faff",
-                        "secondary-fixed-dim": "#ffb95c",
-                        "on-primary-container": "#f9ffeb",
-                        "secondary-fixed": "#ffddb7",
-                        "inverse-surface": "#2b3135",
-                        "secondary-container": "#ffa924",
-                        "surface-container-highest": "#dee3e8",
-                        "primary-fixed": "#bbf37c",
-                        "error": "#ba1a1a",
-                        "surface-dim": "#d5dbdf",
-                        "on-surface-variant": "#43493a",
-                        "tertiary-fixed": "#e5e2e1",
-                        "on-primary-fixed": "#0f2000",
-                        "surface-alt": "#FFFFFF",
-                        "secondary": "#845400",
-                        "tertiary-container": "#767474",
-                        "outline": "#737968",
-                        "outline-variant": "#c3c9b5",
-                        "inverse-on-surface": "#ecf1f6",
-                        "surface-container-low": "#eff4f9",
-                        "on-tertiary-fixed-variant": "#474646",
-                        "on-error": "#ffffff",
-                        "on-surface": "#171c20",
-                        "tertiary-fixed-dim": "#c8c6c5",
-                        "on-primary-fixed-variant": "#2d5000",
-                        "growth-green": "#7BB52D",
-                        "surface-variant": "#dee3e8",
-                        "surface-container-lowest": "#ffffff",
-                        "error-container": "#ffdad6",
-                        "background": "#f5faff",
-                        "on-background": "#171c20",
-                        "on-tertiary-fixed": "#1c1b1b",
-                        "slate-text": "#334155",
-                        "on-primary": "#ffffff",
-                        "surface-container-high": "#e4e9ee",
-                        "on-secondary-fixed-variant": "#653e00",
-                        "on-error-container": "#93000a",
-                        "primary-container": "#518116",
-                        "tertiary": "#5d5c5b",
-                        "inverse-primary": "#a0d663",
-                        "on-secondary-fixed": "#2a1700",
-                        "primary-fixed-dim": "#a0d663",
-                        "on-tertiary": "#ffffff",
-                        "solar-gold": "#FBB120",
                         "primary": "#3c6700",
-                        "on-secondary-container": "#6a4200"
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#e4e9ee",
+                        "surface-variant": "#dee3e8",
+                        "secondary": "#845400",
+                        "surface-container-highest": "#dee3e8",
+                        "on-secondary-fixed": "#2a1700",
+                        "slate-text": "#334155",
+                        "on-tertiary-container": "#f7feff",
+                        "on-primary-fixed-variant": "#2d5000",
+                        "surface-container-low": "#eff4f9",
+                        "error-container": "#ffdad6",
+                        "solar-gold": "#FBB120",
+                        "on-background": "#171c20",
+                        "on-primary-container": "#f9ffeb",
+                        "surface-container": "#e9eef3",
+                        "on-primary-fixed": "#0f2000",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f5faff",
+                        "secondary-fixed": "#ffddb7",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#bbf37c",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#171c20"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.25rem",
@@ -74,31 +74,31 @@
                     },
                     "spacing": {
                         "margin-mobile": "16px",
-                        "unit": "8px",
-                        "gutter": "24px",
+                        "container-max": "1280px",
                         "margin-desktop": "40px",
-                        "section-padding": "80px",
-                        "container-max": "1280px"
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "section-padding": "80px"
                     },
                     "fontFamily": {
-                        "label-caps": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "headline-lg-mobile": ["Montserrat"],
-                        "display": ["Montserrat"],
                         "headline-lg": ["Montserrat"],
-                        "button": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display": ["Montserrat"],
+                        "label-caps": ["Inter"],
                         "body-md": ["Inter"],
-                        "headline-md": ["Montserrat"]
+                        "headline-md": ["Montserrat"],
+                        "button": ["Inter"]
                     },
                     "fontSize": {
-                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
-                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
                         "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                        "button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
                         "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
                     }
                 }
             }
@@ -107,51 +107,49 @@
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
         }
+        .step-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .progress-bar { transition: width 0.6s ease-in-out; }
         .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #3c6700;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: -8px;
         }
-        .scroll-reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 8px;
+            background: #dee3e8;
+            border-radius: 4px;
         }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body-md">
+<body class="bg-surface font-body-md text-on-surface">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest dark:bg-surface-dim shadow-sm h-20 transition-all duration-300">
+<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-sm h-20">
 <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-full">
-<div class="flex items-center gap-2">
-<img alt="Knauz Energie Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLunk8TFRJXihofOaavKGhyXRM5c5UOBhLgg1EHqxZdJgy9QLgf91uAXtdNwDwyAkxcOTIBuSNie8IJHrq4LSAwF6CN4_9kyhi-7oZB0WdiG8lWfbgC23JejfZazvnMXRQ1f1S6jBWLOnsm8TQAuBPpEzsMJc5rABqsaVzYOhdbiVMjylExb-y05_37osGR5sNRolV9GYEHGbNOnB_n-UfmMFHlzwqK3MCBDh01zVkB6KarDTeMMLUXhGww"/>
-<span class="hidden lg:block font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">Knauz Energie</span>
-</div>
-<div class="hidden md:flex items-center gap-8">
-<a class="font-button text-button text-primary border-b-2 border-primary pb-1" href="index.html">Napelem</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="szolgaltatasok.html">Szolgáltatások</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="palyazatok.html">Pályázatok</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="referencia.html">Referenciák</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="rolunk.html">Rólunk</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="kapcsolat.html">Kapcsolat</a>
+<div class="font-headline-md text-headline-md font-bold text-primary">Knauz Energie</div>
+<div class="hidden md:flex space-x-gutter">
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="index.html">Napelem</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Hőszivattyú</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Töltés</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Szolgáltatások</a>
 </div>
 <div class="flex items-center gap-4">
-<a class="hidden sm:flex items-center gap-2 text-on-surface-variant font-semibold text-button font-button" href="tel:0036204771144">
-<span class="material-symbols-outlined text-primary">phone_in_talk</span>
-                    +49 123 456789
-                </a>
-<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-lg font-button text-button hover:opacity-80 active:scale-95 transition-all shadow-sm">
-                    Get a Quote
-                </button>
+<span class="hidden lg:block text-primary font-bold font-button">+36 20 477 1144</span>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-lg font-button hover:opacity-90 active:scale-95 transition-all">Árajánlatot kérek</button>
 </div>
 </div>
 </nav>
-<!-- Hero Section -->
 <header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
 <div class="absolute inset-0 z-0">
 <div class="w-full h-full bg-cover bg-center brightness-75" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvkpIwBMCgRWXF1QgppsQLPeG5SRFlMzo-zhiIuLKV4XDQjTSSXBxJRatPA7LDxyNVT2nDahZqFk1s2kXt1daW3R9fVvpBf1ZLfE25FYhov2vZDW4_HBXqFhKTmrayE6dSHaMpy_ap8gthlHysASDpwK9R7ju4mRjmX2QZrEz3UflxGIfT7DENF1PhVSumeWjIP0hq3dOE8sqp_0yZZAC8fr5wqs0Yr2BDSjGHD5_KS2nFO_16CnJuC2kT0')"></div>
@@ -462,78 +460,62 @@
 </div>
 </section>
 <!-- Footer -->
-<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full pt-section-padding pb-unit">
+
+<footer class="bg-surface-container-highest w-full pt-section-padding pb-unit">
 <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
-<div class="space-y-6">
-<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Knauz Energie</div>
-<p class="font-body-md text-on-surface-variant">9025 Győr Gyepszél utca 1-3.</p>
-<div class="space-y-2">
-<a class="block text-on-surface hover:text-primary transition-colors" href="mailto:info@knauz-energie.eu">info@knauz-energie.eu</a>
-<a class="block text-on-surface hover:text-primary transition-colors" href="mailto:ajanlat@knauz-energie.eu">ajanlat@knauz-energie.eu</a>
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-6">Knauz Energie</div>
+<p class="text-body-md text-on-surface-variant">A jövő energiája, ma. Prémium napelemes rendszerek és energetikai megoldások.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Termékek</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Napelem rendszerek</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Hőszivattyúk</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Villanyautó töltés</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Ügyfélszolgálat</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="kapcsolat.html">Kapcsolat</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">FAQ</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="palyazatok.html">Pályázatok</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Jogi nyilatkozat</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Adatvédelmi tájékoztató</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">ÁSZF</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Impresszum</a></li>
+</ul>
 </div>
 </div>
-<div class="space-y-6">
-<h4 class="font-label-caps text-label-caps text-on-surface">ÜGYINTÉZÉS</h4>
-<div class="flex flex-col gap-3">
-<a class="text-on-surface-variant hover:text-on-surface hover:underline transition-all" href="#">Impresszum</a>
-<a class="text-on-surface-variant hover:text-on-surface hover:underline transition-all" href="#">Adatvédelmi tájékoztató</a>
-<a class="text-on-surface-variant hover:text-on-surface hover:underline transition-all" href="#">ÁSZF</a>
-</div>
-</div>
-<div class="space-y-6">
-<h4 class="font-label-caps text-label-caps text-on-surface">KAPCSOLAT</h4>
-<div class="flex flex-col gap-3 font-body-md">
-<p class="text-on-surface-variant">Értékesítés: +36 20 477 1144</p>
-<p class="text-on-surface-variant">Iroda: +36 20 404 3023</p>
-<a class="text-primary font-bold hover:underline" href="#">Knauz Energie Store</a>
-</div>
-</div>
-<div class="space-y-6">
-<h4 class="font-label-caps text-label-caps text-on-surface">SOCIAL</h4>
-<div class="flex gap-4">
-<a class="w-10 h-10 bg-on-surface-variant rounded-full flex items-center justify-center text-surface-container-lowest hover:bg-primary transition-colors" href="#">
-<span class="material-symbols-outlined">public</span>
-</a>
-<a class="w-10 h-10 bg-on-surface-variant rounded-full flex items-center justify-center text-surface-container-lowest hover:bg-primary transition-colors" href="#">
-<span class="material-symbols-outlined">mail</span>
-</a>
-</div>
-</div>
-</div>
-<div class="max-w-container-max mx-auto px-margin-desktop mt-section-padding pt-8 border-t border-outline-variant/30">
-<p class="font-body-md text-on-surface-variant text-sm">© 2024 Knauz Energie GmbH. All rights reserved.</p>
-</div>
+<div class="max-w-container-max mx-auto px-margin-desktop border-t border-outline-variant mt-16 pt-8 text-center text-body-md text-on-surface-variant">
+            © 2024 Knauz Energie GmbH. All rights reserved.
+        </div>
 </footer>
 <script>
-        // Micro-interactions and Scroll Reveal
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                threshold: 0.1
-            };
+        const billSlider = document.getElementById('monthly-bill');
+        const billDisplay = document.getElementById('bill-value');
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, observerOptions);
+        billSlider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            billDisplay.textContent = val.toLocaleString('hu-HU');
+            
+            // Simple logic for the demo visual feedback
+            // Update other results dynamically if this were a full app
+        });
 
-            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
-
-            // Navbar behavior on scroll
-            window.addEventListener('scroll', () => {
-                const nav = document.querySelector('nav');
-                if (window.scrollY > 50) {
-                    nav.classList.add('shadow-lg');
-                    nav.classList.add('h-16');
-                    nav.classList.remove('h-20');
-                } else {
-                    nav.classList.remove('shadow-lg');
-                    nav.classList.remove('h-16');
-                    nav.classList.add('h-20');
-                }
+        // Simple Step Logic Interaction
+        const formButtons = document.querySelectorAll('#calc-form button');
+        formButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => btn.style.transform = 'scale(1)', 100);
             });
         });
     </script>
-</body></html>
+</body>
+</html>

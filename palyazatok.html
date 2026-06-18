@@ -3,11 +3,11 @@
 <html lang="hu"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Pályázatok | Knauz Energie</title>
+<title>Napelem Kalkulátor | Knauz Energie</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -100,52 +100,53 @@
                         "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
                         "button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
                     }
-                },
-            },
+                }
+            }
         }
     </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
         }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 24px;
+        .step-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .progress-bar { transition: width 0.6s ease-in-out; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(60, 103, 0, 0.05) 0%, rgba(245, 250, 255, 1) 100%);
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #3c6700;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: -8px;
         }
-        .card-shadow {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 8px;
+            background: #dee3e8;
+            border-radius: 4px;
         }
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-        }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #3c6700; border-radius: 4px; }
     </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface">
-<!-- TopNavBar Navigation -->
-<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-sm h-20 transition-all duration-300">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-sm h-20">
 <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-full">
-<div class="flex items-center gap-2">
-<span class="font-headline-md text-headline-md font-bold text-primary">Knauz Energie</span>
-</div>
-<div class="hidden md:flex items-center gap-8">
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="index.html">Napelem</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="szolgaltatasok.html">Szolgáltatások</a>
-<a class="font-button text-button text-primary border-b-2 border-primary pb-1" href="palyazatok.html">Pályázatok</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="referencia.html">Referenciák</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="rolunk.html">Rólunk</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="kapcsolat.html">Kapcsolat</a>
+<div class="font-headline-md text-headline-md font-bold text-primary">Knauz Energie</div>
+<div class="hidden md:flex space-x-gutter">
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="index.html">Napelem</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Hőszivattyú</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Töltés</a>
+<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors" href="szolgaltatasok.html">Szolgáltatások</a>
 </div>
 <div class="flex items-center gap-4">
-<a class="hidden lg:block font-button text-button text-primary font-bold" href="tel:+49123456789">+49 123 456789</a>
-<button class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-button text-button shadow-sm hover:opacity-90 active:scale-95 transition-all">Árajánlatot kérek</button>
+<span class="hidden lg:block text-primary font-bold font-button">+36 20 477 1144</span>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-lg font-button hover:opacity-90 active:scale-95 transition-all">Árajánlatot kérek</button>
 </div>
 </div>
 </nav>
@@ -374,79 +375,61 @@
 </div>
 </section>
 </main>
-<!-- Footer -->
 <footer class="bg-surface-container-highest w-full pt-section-padding pb-unit">
 <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
 <div class="col-span-1 md:col-span-1">
-<span class="font-headline-md text-headline-md font-bold text-primary mb-6 block">Knauz Energie</span>
-<p class="text-on-surface-variant mb-6 text-sm">Az Ön megbízható partnere a fenntartható energiarendszerek tervezésében és kivitelezésében Magyarországon.</p>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]">public</span>
-</a>
-<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]">share</span>
-</a>
-</div>
+<div class="font-headline-md text-headline-md font-bold text-primary mb-6">Knauz Energie</div>
+<p class="text-body-md text-on-surface-variant">A jövő energiája, ma. Prémium napelemes rendszerek és energetikai megoldások.</p>
 </div>
 <div>
-<h5 class="font-label-caps text-label-caps text-on-surface-variant mb-6">Szolgáltatások</h5>
-<ul class="space-y-3">
-<li><a class="text-on-surface-variant hover:text-on-surface underline decoration-transparent hover:decoration-current transition-all" href="#">Napelemes rendszerek</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-all" href="#">Hőszivattyúk</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-all" href="#">E-mobilitás</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-all" href="#">Energetikai tanúsítás</a></li>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Termékek</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Napelem rendszerek</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Hőszivattyúk</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Villanyautó töltés</a></li>
 </ul>
 </div>
 <div>
-<h5 class="font-label-caps text-label-caps text-on-surface-variant mb-6">Pályázatok</h5>
-<ul class="space-y-3">
-<li><a class="text-primary font-bold" href="#">Napenergia Plusz</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-all" href="#">Vidéki Otthonfelújítás</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-all" href="#">Jedlik Ányos Terv</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-all" href="#">FAQ</a></li>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Ügyfélszolgálat</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="kapcsolat.html">Kapcsolat</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">FAQ</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="palyazatok.html">Pályázatok</a></li>
 </ul>
 </div>
 <div>
-<h5 class="font-label-caps text-label-caps text-on-surface-variant mb-6">Kapcsolat</h5>
-<ul class="space-y-3 text-sm">
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
-<span>1051 Budapest, Szent István tér 1.</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-[20px]">mail</span>
-<span>info@knauzenergie.hu</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-[20px]">call</span>
-<span>+36 1 234 5678</span>
-</li>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Jogi nyilatkozat</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Adatvédelmi tájékoztató</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">ÁSZF</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Impresszum</a></li>
 </ul>
 </div>
 </div>
-<div class="max-w-container-max mx-auto px-margin-desktop border-t border-surface-variant mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-body-md text-on-surface-variant text-sm">© 2024 Knauz Energie GmbH. Minden jog fenntartva.</p>
-<div class="flex gap-6 text-sm">
-<a class="text-on-surface-variant hover:text-primary" href="#">Adatkezelés</a>
-<a class="text-on-surface-variant hover:text-primary" href="#">Impresszum</a>
-<a class="text-on-surface-variant hover:text-primary" href="#">ÁSZF</a>
-</div>
-</div>
+<div class="max-w-container-max mx-auto px-margin-desktop border-t border-outline-variant mt-16 pt-8 text-center text-body-md text-on-surface-variant">
+            © 2024 Knauz Energie GmbH. All rights reserved.
+        </div>
 </footer>
 <script>
-        // Simple scroll behavior for navbar
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('py-2', 'bg-white/95', 'backdrop-blur-md');
-                nav.classList.remove('h-20');
-                nav.classList.add('h-16');
-            } else {
-                nav.classList.remove('py-2', 'bg-white/95', 'backdrop-blur-md');
-                nav.classList.add('h-20');
-                nav.classList.remove('h-16');
-            }
+        const billSlider = document.getElementById('monthly-bill');
+        const billDisplay = document.getElementById('bill-value');
+
+        billSlider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            billDisplay.textContent = val.toLocaleString('hu-HU');
+            
+            // Simple logic for the demo visual feedback
+            // Update other results dynamically if this were a full app
+        });
+
+        // Simple Step Logic Interaction
+        const formButtons = document.querySelectorAll('#calc-form button');
+        formButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => btn.style.transform = 'scale(1)', 100);
+            });
         });
     </script>
-</body></html>
+</body>
+</html>
