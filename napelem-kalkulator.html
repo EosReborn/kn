@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
-<html lang="hu"><head>
+<html lang="hu">
+<head>
 <meta charset="utf-8"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Knauz Energie Kft"/>
@@ -15,410 +15,158 @@
 <meta name="twitter:title" content="Napelem Kalkulátor – Knauz Energie Kft"/>
 <meta name="twitter:description" content="2 perces napelem kalkulátor. Számold ki a rendszer méretét és kapj előzetes árajánlatot!"/>
 <meta name="twitter:image" content="https://www.knauz-energie.hu/wp-content/uploads/2023/12/Munkak-1-1024x576.jpg"/>
+<meta name="description" content="2 perces napelem kalkulátor. Számold ki a rendszer méretét és kapj előzetes árajánlatot!"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Napelem Kalkulátor – Knauz Energie Kft</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-tertiary-fixed-variant": "#474646",
-                        "primary-fixed-dim": "#a0d663",
-                        "tertiary-fixed": "#e5e2e1",
-                        "primary-container": "#518116",
-                        "secondary-fixed-dim": "#ffb95c",
-                        "on-error": "#ffffff",
-                        "on-surface-variant": "#43493a",
-                        "inverse-primary": "#a0d663",
-                        "tertiary": "#5d5c5b",
-                        "inverse-surface": "#2b3135",
-                        "surface-alt": "#FFFFFF",
-                        "growth-green": "#7BB52D",
-                        "tertiary-container": "#767474",
-                        "inverse-on-surface": "#ecf1f6",
-                        "on-secondary-container": "#6a4200",
-                        "secondary-container": "#ffa924",
-                        "outline-variant": "#c3c9b5",
-                        "surface-container-lowest": "#ffffff",
-                        "outline": "#737968",
-                        "surface-dim": "#d5dbdf",
-                        "on-error-container": "#93000a",
-                        "background": "#f5faff",
-                        "on-secondary-fixed-variant": "#653e00",
-                        "surface": "#f5faff",
-                        "surface-tint": "#3e6a00",
-                        "primary": "#3c6700",
-                        "tertiary-fixed-dim": "#c8c6c5",
-                        "surface-container-high": "#e4e9ee",
-                        "surface-variant": "#dee3e8",
-                        "secondary": "#845400",
-                        "surface-container-highest": "#dee3e8",
-                        "on-secondary-fixed": "#2a1700",
-                        "slate-text": "#334155",
-                        "on-tertiary-container": "#f7feff",
-                        "on-primary-fixed-variant": "#2d5000",
-                        "surface-container-low": "#eff4f9",
-                        "error-container": "#ffdad6",
-                        "solar-gold": "#FBB120",
-                        "on-background": "#171c20",
-                        "on-primary-container": "#f9ffeb",
-                        "surface-container": "#e9eef3",
-                        "on-primary-fixed": "#0f2000",
-                        "on-primary": "#ffffff",
-                        "error": "#ba1a1a",
-                        "surface-bright": "#f5faff",
-                        "secondary-fixed": "#ffddb7",
-                        "on-tertiary-fixed": "#1c1b1b",
-                        "on-secondary": "#ffffff",
-                        "primary-fixed": "#bbf37c",
-                        "on-tertiary": "#ffffff",
-                        "on-surface": "#171c20"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "margin-mobile": "16px",
-                        "container-max": "1280px",
-                        "margin-desktop": "40px",
-                        "gutter": "24px",
-                        "unit": "8px",
-                        "section-padding": "80px"
-                    },
-                    "fontFamily": {
-                        "headline-lg": ["Montserrat"],
-                        "headline-lg-mobile": ["Montserrat"],
-                        "body-lg": ["Inter"],
-                        "display": ["Montserrat"],
-                        "label-caps": ["Inter"],
-                        "body-md": ["Inter"],
-                        "headline-md": ["Montserrat"],
-                        "button": ["Inter"]
-                    },
-                    "fontSize": {
-                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                        "button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
-                    }
-                }
-            }
-        }
-    </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-        .step-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .progress-bar { transition: width 0.6s ease-in-out; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background: #3c6700;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-top: -8px;
-        }
-        input[type="range"]::-webkit-slider-runnable-track {
-            height: 8px;
-            background: #dee3e8;
-            border-radius: 4px;
-        }
-    </style>
-
-<style id="knauz-custom">
-  /* ===== ANIMATIONS ===== */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(32px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-32px); }
-    to   { opacity: 1; transform: translateX(0); }
-  }
-  @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(32px); }
-    to   { opacity: 1; transform: translateX(0); }
-  }
-  @keyframes countUp {
-    from { opacity: 0; transform: scale(0.8); }
-    to   { opacity: 1; transform: scale(1); }
-  }
-  @keyframes pulse-ring {
-    0%   { box-shadow: 0 0 0 0 rgba(60,103,0,.4); }
-    70%  { box-shadow: 0 0 0 16px rgba(60,103,0,0); }
-    100% { box-shadow: 0 0 0 0 rgba(60,103,0,0); }
-  }
-  @keyframes shimmer {
-    0%   { background-position: -200% center; }
-    100% { background-position: 200% center; }
-  }
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity .7s ease, transform .7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal-left  { opacity:0; transform:translateX(-28px); transition: opacity .7s ease, transform .7s ease; }
-  .reveal-right { opacity:0; transform:translateX(28px);  transition: opacity .7s ease, transform .7s ease; }
-  .reveal-left.visible, .reveal-right.visible { opacity:1; transform:translateX(0); }
-
-  .stat-num { animation: countUp .8s ease both; }
-
-  /* Hero entrance */
-  .hero-title  { animation: fadeInUp .9s ease both; }
-  .hero-sub    { animation: fadeInUp .9s .15s ease both; }
-  .hero-btns   { animation: fadeInUp .9s .3s ease both; }
-  .hero-badge  { animation: fadeInLeft .7s ease both; }
-
-  /* Card hover lift */
-  .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
-  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,.12); }
-
-  /* CTA pulse */
-  .btn-pulse { animation: pulse-ring 2.5s infinite; }
-
-  /* ===== MOBILE FIXES ===== */
-  /* Nav mobile hamburger */
-  #mobile-menu {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-    padding: 8px;
-  }
-  #mobile-menu span {
-    display: block; width: 24px; height: 2px;
-    background: #3c6700;
-    transition: all .3s ease;
-  }
-  #mobile-nav {
-    display: none;
-    position: fixed; top: 80px; left: 0; right: 0;
-    background: white;
-    z-index: 49;
-    flex-direction: column;
-    padding: 16px 24px 24px;
-    box-shadow: 0 8px 24px rgba(0,0,0,.12);
-    border-top: 2px solid #e9eef3;
-  }
-  #mobile-nav.open { display: flex; }
-  #mobile-nav a {
-    padding: 12px 0;
-    font-size: 16px; font-weight: 600;
-    color: #171c20;
-    border-bottom: 1px solid #e9eef3;
-    text-decoration: none;
-  }
-  #mobile-nav a:last-child { border-bottom: none; }
-  #mobile-nav a:hover { color: #3c6700; }
-
-  @media (max-width: 768px) {
-    /* Show hamburger, hide desktop nav */
-    #mobile-menu { display: flex !important; }
-
-    /* Hero: full width, better padding */
-    header { min-height: 85vh !important; }
-    .hero-title { font-size: 2rem !important; line-height: 1.2 !important; }
-
-    /* Stats grid: 2 cols on mobile */
-    .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
-
-    /* Services grid: 1 col on mobile */
-    .services-grid { grid-template-columns: 1fr !important; }
-
-    /* Section padding reduction */
-    .section-mobile { padding-top: 48px !important; padding-bottom: 48px !important; }
-
-    /* Footer: stack */
-    .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-
-    /* Partner logos: 3 col */
-    .partner-grid { grid-template-columns: repeat(3,1fr) !important; gap: 12px !important; }
-
-    /* Cards in 1 col */
-    .md\:grid-cols-2, .md\:grid-cols-3, .lg\:grid-cols-2, .lg\:grid-cols-3 {
-      grid-template-columns: 1fr !important;
-    }
-    .md\:flex-row { flex-direction: column !important; }
-
-    /* Text size */
-    .text-display { font-size: 2rem !important; line-height: 2.5rem !important; }
-    .text-headline-lg { font-size: 1.5rem !important; line-height: 2rem !important; }
-
-    /* Padding */
-    .px-margin-desktop { padding-left: 16px !important; padding-right: 16px !important; }
-    .py-section-padding { padding-top: 48px !important; padding-bottom: 48px !important; }
-
-    /* Phone number: show on mobile */
-    .hidden.sm\:flex { display: flex !important; font-size: 13px; }
-  }
-
-  /* Smooth scroll */
-  html { scroll-behavior: smooth; }
-
-  /* Nav scroll effect handled by JS */
-  nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,.12) !important; }
-</style>
-
-
-<style id="knauz-shared">
-@keyframes fadeUp   { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-@keyframes fadeLeft { from{opacity:0;transform:translateX(-30px)} to{opacity:1;transform:translateX(0)} }
-@keyframes fadeRight{ from{opacity:0;transform:translateX(30px)} to{opacity:1;transform:translateX(0)} }
-@keyframes pulse-glow { 0%,100%{box-shadow:0 0 0 0 rgba(60,103,0,.35)} 50%{box-shadow:0 0 0 12px rgba(60,103,0,0)} }
-@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-
-.reveal          { opacity:0; transform:translateY(28px); transition:opacity .7s ease,transform .7s ease; }
-.reveal-left     { opacity:0; transform:translateX(-28px); transition:opacity .7s ease,transform .7s ease; }
-.reveal-right    { opacity:0; transform:translateX(28px); transition:opacity .7s ease,transform .7s ease; }
-.reveal-scale    { opacity:0; transform:scale(.9); transition:opacity .65s ease,transform .65s ease; }
-.reveal.show,.reveal-left.show,.reveal-right.show,.reveal-scale.show { opacity:1;transform:none; }
-.reveal-delay-1  { transition-delay:.1s; }
-.reveal-delay-2  { transition-delay:.2s; }
-.reveal-delay-3  { transition-delay:.3s; }
-.card-hover  { transition:transform .3s ease,box-shadow .3s ease; }
-.card-hover:hover { transform:translateY(-6px); box-shadow:0 20px 44px rgba(0,0,0,.13); }
-.btn-pulse   { animation:pulse-glow 2.4s infinite; }
-.glass-card  { background:rgba(255,255,255,.82); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.4); }
-
-#mob-btn { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; background:none; border:none; }
-#mob-btn span { display:block; width:24px; height:2px; background:#3c6700; border-radius:2px; transition:all .3s; }
-#mob-btn.open span:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
-#mob-btn.open span:nth-child(2){ opacity:0; }
-#mob-btn.open span:nth-child(3){ transform:rotate(-45deg) translate(5px,-5px); }
-#mob-nav { display:none; position:fixed; top:80px; left:0; right:0; background:#fff; z-index:48; flex-direction:column; padding:16px 24px 28px; box-shadow:0 8px 30px rgba(0,0,0,.14); border-top:2px solid #e9eef3; }
-#mob-nav.open { display:flex; }
-#mob-nav a { padding:13px 0; font-size:15px; font-weight:600; color:#171c20; border-bottom:1px solid #e9eef3; text-decoration:none; }
-#mob-nav a:last-child { border:none; }
-#mob-nav a:hover { color:#3c6700; }
-
-@media(max-width:768px) {
-  #mob-btn { display:flex !important; }
-  .desktop-nav { display:none !important; }
-  .text-display { font-size:2.1rem !important; line-height:2.6rem !important; }
-  .text-headline-lg { font-size:1.55rem !important; line-height:2rem !important; }
-  .px-margin-desktop { padding-left:16px !important; padding-right:16px !important; }
-  .py-section-padding { padding-top:52px !important; padding-bottom:52px !important; }
-  .md\:grid-cols-2,.md\:grid-cols-3,.lg\:grid-cols-2,.lg\:grid-cols-3 { grid-template-columns:1fr !important; }
-  .md\:flex-row { flex-direction:column !important; }
-  .footer-grid { grid-template-columns:1fr 1fr !important; }
-}
-html { scroll-behavior:smooth; }
-nav.scrolled { box-shadow:0 4px 24px rgba(0,0,0,.13) !important; }
-details summary { list-style:none; }
-details summary::-webkit-details-marker { display:none; }
-details[open] summary .faq-icon { transform:rotate(180deg); }
-.faq-icon { transition:transform .3s ease; }
-</style>
-
-<style id="knauz-mobile-extra">
-/* ── EXTRA MOBILE FIXES ── */
-/* Prevent horizontal scroll */
-body { overflow-x: hidden; }
 * { box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #f5faff; color: #171c20; overflow-x: hidden; }
+h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
+.material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; vertical-align: middle; font-family: 'Material Symbols Outlined'; }
 
-/* Nav height on mobile */
-@media(max-width:768px) {
-  nav { height: 64px !important; }
-  #mob-nav { top: 64px !important; }
-  body { padding-top: 0; }
-  
-  /* Fix hero on mobile */
-  header { padding-top: 64px !important; min-height: 85vh !important; }
-  
-  /* Stats floating box hide on very small screens */
-  .hero-stats { display: none !important; }
-  
-  /* Fix grid gaps */
-  .gap-gutter { gap: 16px !important; }
-  
-  /* Wider buttons on mobile */
-  .flex-wrap { gap: 12px !important; }
-  a[href], button { min-height: 44px; }
-  
-  /* Fix partner grid overflow */
-  .partner-grid img { height: 40px !important; }
-  
-  /* Team grid single column on very small */
-  .team-grid { grid-template-columns: 1fr 1fr 1fr !important; }
-  
-  /* Fix about section image */
-  .reveal-right img { height: 300px !important; }
-  
-  /* Float card hide on mobile */
-  .float-anim { display: none !important; }
-  
-  /* FAQ two-col → single col */
-  .md\:grid-cols-2 { grid-template-columns: 1fr !important; }
-  
-  /* CTA section */
-  .cta-block { padding: 24px !important; }
-  .cta-block h2 { font-size: 1.4rem !important; }
-  
-  /* Footer */
-  footer .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 20px !important; }
-  
-  /* Fix text overflow */
-  h1, h2, h3 { word-break: break-word; }
-  
-  /* Services section */
-  section { padding-top: 40px !important; padding-bottom: 40px !important; }
+/* ── NAV ── */
+nav { position: fixed; top: 0; width: 100%; z-index: 50; background: #fff; box-shadow: 0 1px 8px rgba(0,0,0,.08); height: 72px; }
+.nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo img { height: 40px; width: auto; }
+.nav-logo span { font-family: Montserrat; font-size: 1.1rem; font-weight: 700; color: #3c6700; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { font-size: .875rem; font-weight: 600; color: #43493a; text-decoration: none; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: #3c6700; }
+.nav-links a.active { border-bottom: 2px solid #3c6700; padding-bottom: 2px; }
+.nav-cta { background: #ffa924; color: #6a4200; padding: 9px 20px; border-radius: 8px; font-weight: 700; font-size: .875rem; text-decoration: none; transition: opacity .2s; white-space: nowrap; }
+.nav-cta:hover { opacity: .85; }
+.nav-phone { display: flex; align-items: center; gap: 6px; color: #43493a; font-size: .85rem; font-weight: 600; text-decoration: none; }
+.nav-phone:hover { color: #3c6700; }
+
+/* Hamburger */
+#mob-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+#mob-btn span { display: block; width: 24px; height: 2px; background: #3c6700; border-radius: 2px; transition: all .3s; }
+#mob-btn.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+#mob-btn.open span:nth-child(2) { opacity: 0; }
+#mob-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+#mob-nav { display: none; position: fixed; top: 72px; left: 0; right: 0; background: #fff; z-index: 48; flex-direction: column; padding: 12px 24px 24px; box-shadow: 0 8px 24px rgba(0,0,0,.12); border-top: 2px solid #e9eef3; }
+#mob-nav.open { display: flex; }
+#mob-nav a { padding: 12px 0; font-size: 15px; font-weight: 600; color: #171c20; border-bottom: 1px solid #e9eef3; text-decoration: none; }
+#mob-nav a:last-child { border: none; }
+
+/* ── CALCULATOR ── */
+.calc-wrap { max-width: 960px; margin: 0 auto; padding: 108px 24px 80px; }
+
+/* Progress */
+.progress-wrap { display: flex; align-items: center; gap: 0; margin-bottom: 40px; }
+.step-dot { width: 36px; height: 36px; border-radius: 50%; background: #dee3e8; color: #43493a; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .9rem; flex-shrink: 0; transition: all .3s; }
+.step-dot.active { background: #3c6700; color: #fff; }
+.step-dot.done { background: #3c6700; color: #fff; }
+.step-line { flex: 1; height: 3px; background: #dee3e8; transition: background .3s; }
+.step-line.done { background: #3c6700; }
+.step-label { font-size: .7rem; font-weight: 600; color: #43493a; text-align: center; margin-top: 6px; }
+.step-label.active { color: #3c6700; }
+
+/* Cards */
+.calc-card { background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,.07); border: 1.5px solid #e9eef3; }
+
+/* Option buttons */
+.opt-btn { border: 2px solid #dee3e8; border-radius: 12px; padding: 18px 16px; cursor: pointer; background: #fff; transition: all .2s; display: flex; flex-direction: column; align-items: center; gap: 8px; font-family: Montserrat; font-weight: 600; font-size: .9rem; color: #43493a; }
+.opt-btn:hover { border-color: #3c6700; color: #3c6700; }
+.opt-btn.selected { border-color: #3c6700; background: #f0f7e6; color: #3c6700; }
+.opt-btn .material-symbols-outlined { font-size: 2.2rem; }
+
+/* Slider */
+.slider-wrap { position: relative; }
+input[type=range] { -webkit-appearance: none; width: 100%; height: 8px; border-radius: 4px; background: #dee3e8; outline: none; cursor: pointer; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 26px; width: 26px; border-radius: 50%; background: #3c6700; cursor: pointer; box-shadow: 0 2px 8px rgba(60,103,0,.4); }
+input[type=range]::-webkit-slider-runnable-track { border-radius: 4px; }
+
+/* Result card */
+.result-card { background: linear-gradient(135deg, #3c6700 0%, #5a8b20 100%); color: #fff; border-radius: 16px; padding: 36px; }
+.result-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.15); }
+.result-row:last-child { border: none; }
+.result-val { font-family: Montserrat; font-size: 1.4rem; font-weight: 700; }
+.result-val.gold { color: #ffa924; }
+
+/* Nav buttons */
+.btn-primary { background: #3c6700; color: #fff; border: none; border-radius: 10px; padding: 14px 32px; font-family: Montserrat; font-weight: 700; font-size: .95rem; cursor: pointer; transition: all .2s; }
+.btn-primary:hover { background: #2d5000; transform: translateY(-1px); }
+.btn-secondary { background: #f5faff; color: #3c6700; border: 2px solid #3c6700; border-radius: 10px; padding: 12px 28px; font-family: Montserrat; font-weight: 600; font-size: .95rem; cursor: pointer; transition: all .2s; }
+.btn-secondary:hover { background: #e8f5d0; }
+.btn-cta { background: #ffa924; color: #6a4200; border: none; border-radius: 10px; padding: 16px 36px; font-family: Montserrat; font-weight: 800; font-size: 1.05rem; cursor: pointer; transition: all .2s; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+.btn-cta:hover { background: #e8960e; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,169,36,.4); }
+
+/* Step panels */
+.step-panel { display: none; }
+.step-panel.active { display: block; animation: fadeIn .35s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Info boxes */
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.info-box { background: #f0f7e6; border-radius: 12px; padding: 18px; border-left: 4px solid #3c6700; }
+.info-box .val { font-family: Montserrat; font-size: 1.5rem; font-weight: 800; color: #3c6700; }
+.info-box .lbl { font-size: .75rem; font-weight: 600; color: #5a8b20; text-transform: uppercase; letter-spacing: .05em; margin-top: 2px; }
+
+/* Success state */
+.success-icon { width: 72px; height: 72px; background: #3c6700; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+.success-icon .material-symbols-outlined { font-size: 2.5rem; color: #fff; font-variation-settings: 'FILL' 1; }
+
+/* Mobile */
+@media(max-width: 768px) {
+  .nav-inner { padding: 0 16px; }
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+  #mob-btn { display: flex; }
+  .calc-wrap { padding: 88px 16px 60px; }
+  .calc-card { padding: 24px; }
+  .info-grid { grid-template-columns: 1fr 1fr; }
+  .nav-logo span { display: none; }
+}
+@media(max-width: 480px) {
+  .info-grid { grid-template-columns: 1fr; }
 }
 
-@media(max-width:480px) {
-  .team-grid { grid-template-columns: 1fr !important; }
-  .partner-grid { grid-template-columns: repeat(3, 1fr) !important; }
-  footer .footer-grid { grid-template-columns: 1fr !important; }
-  .text-5xl { font-size: 2rem !important; }
-  .px-10 { padding-left: 20px !important; padding-right: 20px !important; }
+/* Footer */
+footer { background: #2b3135; color: #ecf1f6; padding: 48px 0 20px; margin-top: 60px; }
+.footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+footer h4 { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.5); margin-bottom: 14px; }
+footer a { color: rgba(255,255,255,.7); text-decoration: none; font-size: .875rem; display: block; margin-bottom: 6px; }
+footer a:hover { color: #fff; }
+.footer-copy { max-width: 1280px; margin: 32px auto 0; padding: 16px 40px 0; border-top: 1px solid rgba(255,255,255,.1); text-align: center; font-size: .8rem; color: rgba(255,255,255,.4); }
+@media(max-width: 768px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 24px; padding: 0 20px; }
+  .footer-copy { padding: 16px 20px 0; }
 }
 </style>
 </head>
-<body class="bg-surface font-body-md text-on-surface">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-white shadow-sm h-20" id="main-nav">
-  <div class="flex justify-between items-center max-w-[1280px] mx-auto px-margin-desktop h-full">
-    <a href="index.html" class="flex items-center gap-3">
-      <img src="knauz.png" alt="Knauz Energie" class="h-10 w-auto" onerror="this.style.display='none'"/>
-      <span class="font-headline-md text-headline-md font-bold text-primary hidden lg:block">Knauz Energie</span>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="knauz.png" alt="Knauz Energie" onerror="this.style.display='none'"/>
+      <span>Knauz Energie</span>
     </a>
-    <div class="desktop-nav hidden md:flex items-center gap-8">
-      <a class="font-button text-button text-primary border-b-2 border-primary pb-1" href="index.html">Napelem</a><a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="szolgaltatasok.html">Szolgáltatások</a><a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="palyazatok.html">Pályázatok</a><a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="referencia.html">Referenciák</a><a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="rolunk.html">Rólunk</a><a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="kapcsolat.html">Kapcsolat</a>
+    <div class="nav-links">
+      <a href="index.html">Napelem</a>
+      <a href="szolgaltatasok.html">Szolgáltatások</a>
+      <a href="palyazatok.html">Pályázatok</a>
+      <a href="referencia.html">Referenciák</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
     </div>
-    <div class="flex items-center gap-3">
-      <a class="hidden sm:flex items-center gap-2 text-on-surface-variant font-semibold text-sm" href="tel:+36307223991">
-        <span class="material-symbols-outlined text-primary text-[18px]">phone_in_talk</span>
-        <span class="hidden lg:block">+36 30 722 3991</span>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="tel:+36307223991" class="nav-phone">
+        <span class="material-symbols-outlined" style="font-size:18px;color:#3c6700">phone_in_talk</span>
+        <span style="display:none" id="phone-txt">+36 30 722 3991</span>
       </a>
-      <a href="arajanlatform.html" class="btn-pulse bg-secondary-container text-on-secondary-container px-5 py-2 rounded-lg font-button text-button hover:opacity-90 active:scale-95 transition-all shadow-sm">Árajánlatot kérek</a>
+      <a href="arajanlatform.html" class="nav-cta">Árajánlatot kérek</a>
       <button id="mob-btn" aria-label="Menü"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
+
 <div id="mob-nav">
   <a href="index.html">🌞 Napelem</a>
   <a href="szolgaltatasok.html">🔧 Szolgáltatások</a>
@@ -428,294 +176,466 @@ body { overflow-x: hidden; }
   <a href="kapcsolat.html">📞 Kapcsolat</a>
   <a href="arajanlatform.html" style="color:#3c6700;font-weight:700;margin-top:8px;">→ Árajánlatot kérek</a>
 </div>
-<main class="pt-32 pb-section-padding px-margin-mobile md:px-margin-desktop">
-<div class="max-w-container-max mx-auto">
-<!-- Header Section -->
-<div class="mb-12 text-center">
-<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-caps mb-4">INGYENES ÉS GYORS</span>
-<h1 class="font-display text-display mb-4">Napelem Kalkulátor</h1>
-<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Számolja ki percek alatt leendő napelemes rendszerének méretét és várható megtérülését!</p>
-</div>
-<!-- Main Calculator Bento Grid -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-<!-- Left: Form Step Section -->
-<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-outline-variant relative overflow-hidden">
-<!-- Progress Bar -->
-<div class="absolute top-0 left-0 w-full h-1.5 bg-surface-variant">
-<div class="progress-bar h-full bg-primary" id="progress" style="width: 25%"></div>
-</div>
-<form id="calc-form">
-<!-- Step 1: Energy Usage -->
-<div class="step-transition" id="step-1">
-<div class="flex items-center gap-3 mb-8">
-<span class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">1</span>
-<h2 class="font-headline-md text-headline-md">Energiafogyasztás</h2>
-</div>
-<div class="space-y-12">
-<div>
-<label class="block text-on-surface-variant font-label-caps mb-4">HAVI VILLANYSZÁMLA (HUF)</label>
-<input class="w-full h-2 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" id="monthly-bill" max="100000" min="5000" step="5000" type="range" value="25000"/>
-<div class="flex justify-between mt-4">
-<span class="text-headline-md font-bold text-primary"><span id="bill-value">25 000</span> Ft</span>
-<span class="text-body-md text-on-surface-variant">~ 285 kWh / hó</span>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<button class="p-6 rounded-lg border-2 border-primary bg-primary-fixed-dim/10 text-primary flex flex-col items-center gap-2 transition-all" type="button">
-<span class="material-symbols-outlined text-4xl">home</span>
-<span class="font-bold">Családi ház</span>
-</button>
-<button class="p-6 rounded-lg border-2 border-outline-variant hover:border-primary transition-all flex flex-col items-center gap-2" type="button">
-<span class="material-symbols-outlined text-4xl">business</span>
-<span class="font-bold">Iroda / Üzlet</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Navigation Buttons -->
-<div class="flex justify-between mt-12 pt-8 border-t border-outline-variant">
-<button class="px-8 py-3 rounded-lg font-button text-on-surface-variant hover:bg-surface-variant transition-colors" type="button">Vissza</button>
-<button class="px-10 py-3 rounded-lg font-button bg-primary text-on-primary hover:opacity-90 active:scale-95 transition-all" type="button">Következő lépés</button>
-</div>
-</form>
-</div>
-<!-- Right: Visual Feedback / Summary -->
-<div class="lg:col-span-5 space-y-gutter">
-<!-- Quick Summary Card -->
-<div class="bg-primary text-on-primary rounded-xl p-8 shadow-lg relative overflow-hidden">
 
-<div class="relative z-10">
-<h3 class="font-headline-md text-headline-md mb-6">Becsült eredmények</h3>
-<div class="space-y-6">
-<div class="flex justify-between items-center border-b border-primary-container pb-4">
-<span class="font-body-md opacity-90">Szükséges rendszerméret</span>
-<span class="text-headline-md font-bold">4.2 kWp</span>
-</div>
-<div class="flex justify-between items-center border-b border-primary-container pb-4">
-<span class="font-body-md opacity-90">Napelemek száma</span>
-<span class="text-headline-md font-bold">10 db</span>
-</div>
-<div class="flex justify-between items-center">
-<span class="font-body-md opacity-90">Megtakarítás évente</span>
-<span class="text-headline-md font-bold text-solar-gold">~ 340.000 Ft</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Technical Detail Bento Items -->
-<div class="grid grid-cols-2 gap-4">
-<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant">
-<span class="material-symbols-outlined text-growth-green mb-2" style="font-variation-settings: 'FILL' 1;">eco</span>
-<div class="font-label-caps text-on-surface-variant mb-1">CO2 MEGTAKARÍTÁS</div>
-<div class="text-headline-md font-bold">1.8 tonna</div>
-<div class="text-body-md text-on-surface-variant">évente / rendszer</div>
-</div>
-<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant">
-<span class="material-symbols-outlined text-solar-gold mb-2" style="font-variation-settings: 'FILL' 1;">bolt</span>
-<div class="font-label-caps text-on-surface-variant mb-1">TERMELÉS</div>
-<div class="text-headline-md font-bold">4850 kWh</div>
-<div class="text-body-md text-on-surface-variant">éves hozam</div>
-</div>
-</div>
-<!-- Trust Banner -->
-<div class="glass-card rounded-xl p-6 flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-on-secondary-container">verified</span>
-</div>
-<div>
-<div class="font-bold">Mérnöki Garancia</div>
-<p class="text-body-md text-on-surface-variant">Számításaink a helyi meteorológiai adatokon alapulnak.</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Additional Details Section -->
-<section class="mt-section-padding grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<div class="p-8 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-lg transition-all group">
-<div class="mb-4 text-primary group-hover:scale-110 transition-transform inline-block">
-<span class="material-symbols-outlined text-4xl">roofing</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-2">Tetőtípus</h3>
-<p class="text-body-md text-on-surface-variant mb-4">Cserép, zsindely vagy lapostető? Minden felületre van megoldásunk.</p>
-<a class="text-primary font-button flex items-center gap-2" href="#">Részletek <span class="material-symbols-outlined">arrow_forward</span></a>
-</div>
-<div class="p-8 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-lg transition-all group">
-<div class="mb-4 text-primary group-hover:scale-110 transition-transform inline-block">
-<span class="material-symbols-outlined text-4xl">compass_calibration</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-2">Tájolás</h3>
-<p class="text-body-md text-on-surface-variant mb-4">Déli tájolás az ideális, de a K-Ny tájolás is kiváló hozamot biztosít.</p>
-<a class="text-primary font-button flex items-center gap-2" href="#">Részletek <span class="material-symbols-outlined">arrow_forward</span></a>
-</div>
-<div class="p-8 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-lg transition-all group">
-<div class="mb-4 text-primary group-hover:scale-110 transition-transform inline-block">
-<span class="material-symbols-outlined text-4xl">battery_charging_full</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-2">Akkumulátor</h3>
-<p class="text-body-md text-on-surface-variant mb-4">Növelje az önfogyasztását tárolórendszerrel a 24 órás energiáért.</p>
-<a class="text-primary font-button flex items-center gap-2" href="#">Részletek <span class="material-symbols-outlined">arrow_forward</span></a>
-</div>
-</section>
-</div>
-</main>
-<footer class="bg-inverse-surface text-inverse-on-surface pt-16 pb-6">
-  <div class="max-w-[1280px] mx-auto px-margin-desktop footer-grid grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
-    <div class="col-span-2 md:col-span-1 space-y-4">
-      <div class="font-bold text-lg text-inverse-primary">Knauz Energie</div>
-      <p class="text-sm text-white/70">9025 Győr, Gyepszél utca 1-3.</p>
-      <div class="space-y-1 text-sm">
-        <a class="block text-white/80 hover:text-white" href="mailto:info@knauz-energie.eu">info@knauz-energie.eu</a>
-        <a class="block text-white/80 hover:text-white" href="mailto:ajanlat@knauz-energie.eu">ajanlat@knauz-energie.eu</a>
+<!-- CALCULATOR -->
+<div class="calc-wrap">
+
+  <!-- Header -->
+  <div style="text-align:center;margin-bottom:40px">
+    <span style="display:inline-block;background:#ffa924;color:#6a4200;padding:6px 18px;border-radius:99px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px">INGYENES · 2 PERCES</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#1a2e0a;margin:0 0 12px">Napelem Kalkulátor</h1>
+    <p style="color:#43493a;font-size:1rem;max-width:520px;margin:0 auto">Adja meg fogyasztási adatait és mi kiszámítjuk a szükséges rendszer méretét, a várható megtakarítást és a megtérülési időt.</p>
+  </div>
+
+  <!-- Progress Steps -->
+  <div style="max-width:500px;margin:0 auto 36px">
+    <div class="progress-wrap">
+      <div>
+        <div class="step-dot active" id="dot-1">1</div>
+        <div class="step-label active" id="lbl-1">Fogyasztás</div>
+      </div>
+      <div class="step-line" id="line-1"></div>
+      <div>
+        <div class="step-dot" id="dot-2">2</div>
+        <div class="step-label" id="lbl-2">Ingatlan</div>
+      </div>
+      <div class="step-line" id="line-2"></div>
+      <div>
+        <div class="step-dot" id="dot-3">3</div>
+        <div class="step-label" id="lbl-3">Tető</div>
+      </div>
+      <div class="step-line" id="line-3"></div>
+      <div>
+        <div class="step-dot" id="dot-4">4</div>
+        <div class="step-label" id="lbl-4">Eredmény</div>
       </div>
     </div>
-    <div class="space-y-4">
-      <h4 class="font-semibold text-xs uppercase tracking-wider text-white/60">Szolgáltatások</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a class="text-white/70 hover:text-white" href="szolgaltatasok.html">Napelemes rendszerek</a></li>
-        <li><a class="text-white/70 hover:text-white" href="szolgaltatasok.html">Hőszivattyúk</a></li>
-        <li><a class="text-white/70 hover:text-white" href="szolgaltatasok.html">Villanyautó töltés</a></li>
-        <li><a class="text-white/70 hover:text-white" href="palyazatok.html">Pályázatírás</a></li>
-      </ul>
-    </div>
-    <div class="space-y-4">
-      <h4 class="font-semibold text-xs uppercase tracking-wider text-white/60">Kapcsolat</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a class="text-white/70 hover:text-white" href="tel:+36307223991">+36 30 722 3991</a></li>
-        <li><a class="text-white/70 hover:text-white" href="tel:+36204771144">+36 20 477 1144</a></li>
-        <li><a class="text-white/70 hover:text-white" href="tel:+36204043023">+36 20 404 3023 (iroda)</a></li>
-        <li><a class="text-white/70 hover:text-white" href="kapcsolat.html">Kapcsolat oldal</a></li>
-      </ul>
-    </div>
-    <div class="space-y-4">
-      <h4 class="font-semibold text-xs uppercase tracking-wider text-white/60">Jogi</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a class="text-white/70 hover:text-white" href="#">Adatvédelmi tájékoztató</a></li>
-        <li><a class="text-white/70 hover:text-white" href="#">ÁSZF</a></li>
-        <li><a class="text-white/70 hover:text-white" href="#">Impresszum</a></li>
-        <li><a class="text-white/70 hover:text-white" href="https://webshop-knauz-energie.unas.hu/" target="_blank">Webshop →</a></li>
-      </ul>
+  </div>
+
+  <!-- ═══ STEP 1: Fogyasztás ═══ -->
+  <div class="step-panel active" id="panel-1">
+    <div class="calc-card">
+      <h2 style="font-size:1.4rem;font-weight:700;color:#1a2e0a;margin:0 0 8px">
+        <span class="material-symbols-outlined" style="color:#3c6700;margin-right:6px">bolt</span>
+        Havi energiafogyasztás
+      </h2>
+      <p style="color:#43493a;font-size:.9rem;margin:0 0 32px">Mennyi az átlagos havi villanyszámlája? (Ha nem tudja pontosan, becsülje meg.)</p>
+
+      <label style="font-size:.75rem;font-weight:700;color:#5a8b20;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:12px">HAVI VILLANYSZÁMLA</label>
+      <input type="range" id="bill-slider" min="5000" max="150000" step="5000" value="25000"/>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px">
+        <div style="font-family:Montserrat;font-size:2rem;font-weight:800;color:#3c6700"><span id="bill-display">25 000</span> Ft/hó</div>
+        <div style="text-align:right;color:#43493a;font-size:.85rem">
+          <div>≈ <strong id="kwh-display">285</strong> kWh/hó</div>
+          <div style="font-size:.75rem;color:#737968">éves: <span id="yearly-kwh">3 420</span> kWh</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:8px;justify-content:space-between;margin-top:8px;color:#737968;font-size:.75rem">
+        <span>5 000 Ft</span><span style="color:#3c6700;font-weight:700" id="slider-hint">Átlagos háztartás</span><span>150 000 Ft</span>
+      </div>
+
+      <div style="margin-top:32px;padding:16px;background:#f0f7e6;border-radius:10px;border-left:4px solid #3c6700;font-size:.85rem;color:#1a2e0a">
+        <strong>💡 Tipp:</strong> A villanyszámlán lévő kWh fogyasztást is megadhatja. Nézze meg az elmúlt 12 hónap számláinak átlagát a pontosabb eredményért.
+      </div>
+
+      <div style="display:flex;justify-content:flex-end;margin-top:32px">
+        <button class="btn-primary" onclick="goStep(2)">Következő <span class="material-symbols-outlined" style="font-size:18px;vertical-align:middle">arrow_forward</span></button>
+      </div>
     </div>
   </div>
-  <div class="max-w-[1280px] mx-auto px-margin-desktop border-t border-white/10 pt-6 text-center text-sm text-white/50">
-    © 2025 Knauz Energie Kft. Minden jog fenntartva.
+
+  <!-- ═══ STEP 2: Ingatlan típusa ═══ -->
+  <div class="step-panel" id="panel-2">
+    <div class="calc-card">
+      <h2 style="font-size:1.4rem;font-weight:700;color:#1a2e0a;margin:0 0 8px">
+        <span class="material-symbols-outlined" style="color:#3c6700;margin-right:6px">home</span>
+        Milyen az ingatlana?
+      </h2>
+      <p style="color:#43493a;font-size:.9rem;margin:0 0 28px">Válassza ki az ingatlan típusát — ez befolyásolja a rendszer optimális méretét.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px" id="type-grid">
+        <button class="opt-btn selected" data-type="csaladi" onclick="selectType(this,'csaladi')">
+          <span class="material-symbols-outlined">home</span>
+          Családi ház
+        </button>
+        <button class="opt-btn" data-type="tarsashaz" onclick="selectType(this,'tarsashaz')">
+          <span class="material-symbols-outlined">apartment</span>
+          Társasház / Lakás
+        </button>
+        <button class="opt-btn" data-type="iroda" onclick="selectType(this,'iroda')">
+          <span class="material-symbols-outlined">business</span>
+          Iroda / Üzlet
+        </button>
+        <button class="opt-btn" data-type="ipari" onclick="selectType(this,'ipari')">
+          <span class="material-symbols-outlined">factory</span>
+          Ipari / Mezőgazd.
+        </button>
+      </div>
+
+      <div style="margin-top:28px">
+        <label style="font-size:.75rem;font-weight:700;color:#5a8b20;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:12px">AKKUMULÁTOR SZÜKSÉGES?</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" id="battery-grid">
+          <button class="opt-btn" data-bat="nem" onclick="selectBat(this,'nem')">
+            <span class="material-symbols-outlined">battery_4_bar</span>
+            Nem szükséges
+          </button>
+          <button class="opt-btn" data-bat="igen" onclick="selectBat(this,'igen')">
+            <span class="material-symbols-outlined">battery_charging_full</span>
+            Igen, érdekel
+          </button>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;margin-top:32px">
+        <button class="btn-secondary" onclick="goStep(1)"><span class="material-symbols-outlined" style="font-size:18px;vertical-align:middle">arrow_back</span> Vissza</button>
+        <button class="btn-primary" onclick="goStep(3)">Következő <span class="material-symbols-outlined" style="font-size:18px;vertical-align:middle">arrow_forward</span></button>
+      </div>
+    </div>
   </div>
+
+  <!-- ═══ STEP 3: Tető ═══ -->
+  <div class="step-panel" id="panel-3">
+    <div class="calc-card">
+      <h2 style="font-size:1.4rem;font-weight:700;color:#1a2e0a;margin:0 0 8px">
+        <span class="material-symbols-outlined" style="color:#3c6700;margin-right:6px">roofing</span>
+        Tető tájolása és típusa
+      </h2>
+      <p style="color:#43493a;font-size:.9rem;margin:0 0 28px">A tető tájolása jelentősen befolyásolja az éves energiatermelést.</p>
+
+      <label style="font-size:.75rem;font-weight:700;color:#5a8b20;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:12px">TÁJOLÁS</label>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px" id="orient-grid">
+        <button class="opt-btn" data-orient="del" onclick="selectOrient(this,'del','1.0')">
+          <span class="material-symbols-outlined">south</span>
+          Dél<br/><span style="font-size:.7rem;color:#5a8b20">100% hozam</span>
+        </button>
+        <button class="opt-btn selected" data-orient="dk-dny" onclick="selectOrient(this,'dk-dny','0.95')">
+          <span class="material-symbols-outlined">explore</span>
+          DK / DNy<br/><span style="font-size:.7rem;color:#5a8b20">95% hozam</span>
+        </button>
+        <button class="opt-btn" data-orient="kny" onclick="selectOrient(this,'kny','0.82')">
+          <span class="material-symbols-outlined">swap_horiz</span>
+          Kelet / Nyugat<br/><span style="font-size:.7rem;color:#5a8b20">82% hozam</span>
+        </button>
+      </div>
+
+      <div style="margin-top:24px">
+        <label style="font-size:.75rem;font-weight:700;color:#5a8b20;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:12px">TETŐHÉJAZAT</label>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px" id="roof-grid">
+          <button class="opt-btn selected" data-roof="cserep" onclick="selectRoof(this,'cserep')">
+            <span class="material-symbols-outlined">roofing</span>
+            Cserép
+          </button>
+          <button class="opt-btn" data-roof="lemez" onclick="selectRoof(this,'lemez')">
+            <span class="material-symbols-outlined">layers</span>
+            Lemez / Zsindely
+          </button>
+          <button class="opt-btn" data-roof="laposteto" onclick="selectRoof(this,'laposteto')">
+            <span class="material-symbols-outlined">crop_square</span>
+            Lapostető
+          </button>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;margin-top:32px">
+        <button class="btn-secondary" onclick="goStep(2)"><span class="material-symbols-outlined" style="font-size:18px;vertical-align:middle">arrow_back</span> Vissza</button>
+        <button class="btn-primary" onclick="calculate()">Számítás <span class="material-symbols-outlined" style="font-size:18px;vertical-align:middle">calculate</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 4: Eredmény ═══ -->
+  <div class="step-panel" id="panel-4">
+    <!-- Result summary -->
+    <div class="result-card" style="margin-bottom:24px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+        <div style="width:48px;height:48px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center">
+          <span class="material-symbols-outlined" style="font-size:1.6rem;color:#ffa924;font-variation-settings:'FILL' 1">solar_power</span>
+        </div>
+        <div>
+          <div style="font-family:Montserrat;font-size:1.25rem;font-weight:700">Az Ön becsült napelemes rendszere</div>
+          <div style="font-size:.85rem;opacity:.8" id="res-subtitle">Családi ház · DK/DNy tájolás · Cserép</div>
+        </div>
+      </div>
+      <div class="result-row">
+        <span style="opacity:.85">Szükséges rendszerméret</span>
+        <span class="result-val" id="res-kwp">— kWp</span>
+      </div>
+      <div class="result-row">
+        <span style="opacity:.85">Napelemek száma (kb.)</span>
+        <span class="result-val" id="res-panels">— db</span>
+      </div>
+      <div class="result-row">
+        <span style="opacity:.85">Éves energiatermelés</span>
+        <span class="result-val" id="res-kwh">— kWh</span>
+      </div>
+      <div class="result-row">
+        <span style="opacity:.85">Becsült beruházási költség</span>
+        <span class="result-val" id="res-cost">— Ft</span>
+      </div>
+      <div class="result-row">
+        <span style="opacity:.85">Éves megtakarítás</span>
+        <span class="result-val gold" id="res-saving">— Ft</span>
+      </div>
+      <div class="result-row" style="border:none;background:rgba(255,255,255,.1);border-radius:10px;padding:14px 12px;margin-top:8px">
+        <span style="font-weight:700">Megtérülési idő</span>
+        <span class="result-val gold" id="res-payback" style="font-size:1.7rem">— év</span>
+      </div>
+    </div>
+
+    <!-- Info boxes -->
+    <div class="info-grid" style="margin-bottom:24px">
+      <div class="info-box">
+        <div class="val" id="res-co2">— t</div>
+        <div class="lbl">CO₂ megtakarítás / év</div>
+      </div>
+      <div class="info-box">
+        <div class="val" id="res-trees">— db</div>
+        <div class="lbl">Equivalent faültetés</div>
+      </div>
+      <div class="info-box">
+        <div class="val" id="res-20yr">— M Ft</div>
+        <div class="lbl">20 éves megtakarítás</div>
+      </div>
+      <div class="info-box">
+        <div class="val" id="res-area">— m²</div>
+        <div class="lbl">Szükséges tetőfelület</div>
+      </div>
+    </div>
+
+    <!-- Disclaimer + CTA -->
+    <div style="background:#fff;border-radius:16px;padding:28px;border:1.5px solid #e9eef3;box-shadow:0 4px 16px rgba(0,0,0,.06)">
+      <p style="font-size:.82rem;color:#43493a;margin:0 0 20px;line-height:1.6">
+        <strong>⚠️ Fontos:</strong> Ez egy előzetes becslés, amely az átlagos magyarországi napsütéses órák (1050–1150 kWh/kWp/év) alapján készült. A pontos ajánlathoz helyszíni felmérés szükséges. A tényleges megtakarítás az árnyékolástól, a tető szögétől és a helyi adóktól is függhet.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center">
+        <a href="arajanlatform.html" class="btn-cta">
+          <span class="material-symbols-outlined" style="font-size:20px">send</span>
+          Ingyenes árajánlatot kérek!
+        </a>
+        <button class="btn-secondary" onclick="goStep(1)">
+          <span class="material-symbols-outlined" style="font-size:18px;vertical-align:middle">refresh</span>
+          Újrakezdem
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:20px;border-top:1px solid #e9eef3">
+        <span class="material-symbols-outlined" style="color:#3c6700;font-variation-settings:'FILL' 1">verified</span>
+        <span style="font-size:.82rem;color:#43493a">Szakembereink <strong>24 órán belül</strong> felveszik Önnel a kapcsolatot és egyeztetnek egy ingyenes helyszíni felmérést.</span>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:flex-start;margin-top:24px">
+      <button class="btn-secondary" onclick="goStep(3)"><span class="material-symbols-outlined" style="font-size:18px;vertical-align:middle">arrow_back</span> Módosítom az adatokat</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div style="font-family:Montserrat;font-size:1.1rem;font-weight:700;color:#a0d663;margin-bottom:12px">Knauz Energie</div>
+      <p style="font-size:.85rem;color:rgba(255,255,255,.6);margin:0 0 12px">9025 Győr, Gyepszél utca 1-3.</p>
+      <a href="mailto:info@knauz-energie.eu">info@knauz-energie.eu</a>
+      <a href="mailto:ajanlat@knauz-energie.eu">ajanlat@knauz-energie.eu</a>
+    </div>
+    <div>
+      <h4>Szolgáltatások</h4>
+      <a href="szolgaltatasok.html">Napelemes rendszerek</a>
+      <a href="szolgaltatasok.html">Hőszivattyúk</a>
+      <a href="szolgaltatasok.html">Villanyautó töltés</a>
+      <a href="palyazatok.html">Pályázatírás</a>
+    </div>
+    <div>
+      <h4>Kapcsolat</h4>
+      <a href="tel:+36307223991">+36 30 722 3991</a>
+      <a href="tel:+36204771144">+36 20 477 1144</a>
+      <a href="tel:+36204043023">+36 20 404 3023</a>
+      <a href="kapcsolat.html">Kapcsolat oldal</a>
+    </div>
+    <div>
+      <h4>Jogi</h4>
+      <a href="#">Adatvédelmi tájékoztató</a>
+      <a href="#">ÁSZF</a>
+      <a href="#">Impresszum</a>
+      <a href="https://webshop-knauz-energie.unas.hu/" target="_blank">Webshop →</a>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 Knauz Energie Kft. Minden jog fenntartva.</div>
 </footer>
+
 <script>
-        const billSlider = document.getElementById('monthly-bill');
-        const billDisplay = document.getElementById('bill-value');
+// ── State ──
+var state = {
+  bill: 25000,
+  type: 'csaladi',
+  battery: null,
+  orient: 'dk-dny',
+  orientFactor: 0.95,
+  roof: 'cserep'
+};
 
-        billSlider.addEventListener('input', (e) => {
-            const val = parseInt(e.target.value);
-            billDisplay.textContent = val.toLocaleString('hu-HU');
-            
-            // Simple logic for the demo visual feedback
-            // Update other results dynamically if this were a full app
-        });
+// ── Step navigation ──
+function goStep(n) {
+  document.querySelectorAll('.step-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.getElementById('panel-' + n).classList.add('active');
 
-        // Simple Step Logic Interaction
-        const formButtons = document.querySelectorAll('#calc-form button');
-        formButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.style.transform = 'scale(0.95)';
-                setTimeout(() => btn.style.transform = 'scale(1)', 100);
-            });
-        });
-    </script>
-
-<script id="knauz-anim">
-(function(){
-  // Mobile menu toggle
-  var btn = document.getElementById('mobile-menu');
-  var nav = document.getElementById('mobile-nav');
-  if(btn && nav){
-    btn.addEventListener('click', function(){
-      nav.classList.toggle('open');
-    });
-    document.addEventListener('click', function(e){
-      if(!btn.contains(e.target) && !nav.contains(e.target)) nav.classList.remove('open');
-    });
+  // Update progress dots
+  for (var i = 1; i <= 4; i++) {
+    var dot = document.getElementById('dot-' + i);
+    var lbl = document.getElementById('lbl-' + i);
+    var line = document.getElementById('line-' + i);
+    dot.classList.remove('active','done');
+    lbl.classList.remove('active');
+    if (i < n) { dot.classList.add('done'); if(line) line.classList.add('done'); }
+    else if (i === n) { dot.classList.add('active'); lbl.classList.add('active'); if(line) line.classList.remove('done'); }
+    else { if(line) line.classList.remove('done'); }
   }
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
 
-  // Nav scroll shadow
-  var navbar = document.querySelector('nav');
-  if(navbar){
-    window.addEventListener('scroll', function(){
-      navbar.classList.toggle('scrolled', window.scrollY > 20);
-    });
+// ── Slider ──
+var slider = document.getElementById('bill-slider');
+slider.addEventListener('input', function() {
+  state.bill = parseInt(this.value);
+  updateSliderDisplay();
+});
+
+function updateSliderDisplay() {
+  var b = state.bill;
+  document.getElementById('bill-display').textContent = b.toLocaleString('hu-HU');
+  var kwh = Math.round(b / 88); // ~88 Ft/kWh átlag
+  document.getElementById('kwh-display').textContent = kwh.toLocaleString('hu-HU');
+  document.getElementById('yearly-kwh').textContent = (kwh * 12).toLocaleString('hu-HU');
+
+  var hint = '';
+  if (b < 10000) hint = 'Kis fogyasztás (pl. lakás)';
+  else if (b < 20000) hint = 'Átlagos lakás';
+  else if (b < 40000) hint = 'Átlagos háztartás';
+  else if (b < 70000) hint = 'Nagy fogyasztású ház';
+  else hint = 'Vállalkozás / ipar';
+  document.getElementById('slider-hint').textContent = hint;
+}
+
+// ── Selectors ──
+function selectType(btn, val) {
+  document.querySelectorAll('#type-grid .opt-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  state.type = val;
+}
+function selectBat(btn, val) {
+  document.querySelectorAll('#battery-grid .opt-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  state.battery = val;
+}
+function selectOrient(btn, val, factor) {
+  document.querySelectorAll('#orient-grid .opt-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  state.orient = val;
+  state.orientFactor = parseFloat(factor);
+}
+function selectRoof(btn, val) {
+  document.querySelectorAll('#roof-grid .opt-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  state.roof = val;
+}
+
+// ── Calculation ──
+function calculate() {
+  var monthlyBill = state.bill;
+  var yearlyBill = monthlyBill * 12;
+  var kwh_price = 88; // Ft/kWh
+  var yearlyKwh = yearlyBill / kwh_price;
+
+  // System sizing: 1 kWp produces ~1050 kWh/year in Hungary (average)
+  var base_yield = 1050; // kWh per kWp per year
+  var effective_yield = base_yield * state.orientFactor;
+
+  // Cover ~85% of yearly consumption
+  var cover = 0.85;
+  var kwp = (yearlyKwh * cover) / effective_yield;
+  kwp = Math.round(kwp * 10) / 10; // round to 1 decimal
+
+  // Panels: each ~430W
+  var panels = Math.ceil(kwp * 1000 / 430);
+
+  // Production
+  var production = Math.round(kwp * effective_yield);
+
+  // Cost: ~350.000 Ft/kWp installed (2024 Hungarian market)
+  var costPerKwp = 350000;
+  if (state.battery === 'igen') costPerKwp += 150000;
+  var cost = Math.round(kwp * costPerKwp);
+
+  // Yearly saving
+  var saving = Math.round(production * kwh_price);
+  // + sell back 10% at 20 Ft/kWh
+  var sellback = Math.round(production * 0.1 * 20);
+  var totalSaving = saving + sellback;
+
+  // Payback
+  var payback = Math.round((cost / totalSaving) * 10) / 10;
+
+  // CO2
+  var co2 = Math.round(production * 0.00045 * 10) / 10; // 450g CO2/kWh grid average HU
+  var trees = Math.round(co2 * 40); // 1 tree absorbs ~25kg CO2/year → inverse
+  var trees2 = Math.round(co2 * 1000 / 25);
+
+  // 20 year saving (with 5% annual price increase)
+  var sum20 = 0;
+  var s = totalSaving;
+  for (var y = 0; y < 20; y++) { sum20 += s; s *= 1.05; }
+  var sum20M = Math.round(sum20 / 100000) / 10;
+
+  // Roof area: each panel ~1.7m²
+  var area = Math.round(panels * 1.7);
+
+  // Subtitle
+  var typeNames = {csaladi:'Családi ház',tarsashaz:'Társasház',iroda:'Iroda/Üzlet',ipari:'Ipari'};
+  var orientNames = {del:'Dél',kny:'Kelet/Nyugat','dk-dny':'DK/DNy'};
+  var roofNames = {cserep:'Cserép',lemez:'Lemez',laposteto:'Lapostető'};
+  document.getElementById('res-subtitle').textContent =
+    typeNames[state.type] + ' · ' + orientNames[state.orient] + ' tájolás · ' + roofNames[state.roof];
+
+  document.getElementById('res-kwp').textContent = kwp + ' kWp';
+  document.getElementById('res-panels').textContent = panels + ' db';
+  document.getElementById('res-kwh').textContent = production.toLocaleString('hu-HU') + ' kWh';
+  document.getElementById('res-cost').textContent = cost.toLocaleString('hu-HU') + ' Ft';
+  document.getElementById('res-saving').textContent = totalSaving.toLocaleString('hu-HU') + ' Ft / év';
+  document.getElementById('res-payback').textContent = payback + ' év';
+  document.getElementById('res-co2').textContent = co2 + ' t';
+  document.getElementById('res-trees').textContent = trees2 + ' db';
+  document.getElementById('res-20yr').textContent = sum20M + ' M Ft';
+  document.getElementById('res-area').textContent = area + ' m²';
+
+  goStep(4);
+}
+
+// ── Mobile menu ──
+var mobBtn = document.getElementById('mob-btn');
+var mobNav = document.getElementById('mob-nav');
+mobBtn.addEventListener('click', function() {
+  mobBtn.classList.toggle('open');
+  mobNav.classList.toggle('open');
+});
+document.addEventListener('click', function(e) {
+  if (!mobBtn.contains(e.target) && !mobNav.contains(e.target)) {
+    mobBtn.classList.remove('open');
+    mobNav.classList.remove('open');
   }
+});
 
-  // Intersection Observer for reveal animations
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+// Nav scroll
+window.addEventListener('scroll', function() {
+  document.getElementById('main-nav').style.boxShadow =
+    window.scrollY > 20 ? '0 4px 20px rgba(0,0,0,.15)' : '0 1px 8px rgba(0,0,0,.08)';
+});
 
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .scroll-reveal').forEach(function(el){
-    el.classList.add('reveal');
-    io.observe(el);
-  });
-
-  // Stagger children of grids
-  document.querySelectorAll('.stagger-children > *').forEach(function(el, i){
-    el.style.transitionDelay = (i * 0.1) + 's';
-    el.classList.add('reveal');
-    io.observe(el);
-  });
-
-  // Counter animation
-  function animateCounter(el, target, suffix){
-    var start = 0;
-    var duration = 1800;
-    var startTime = null;
-    function step(ts){
-      if(!startTime) startTime = ts;
-      var prog = Math.min((ts - startTime)/duration, 1);
-      var val = Math.floor(prog * target);
-      el.textContent = val.toLocaleString('hu-HU') + suffix;
-      if(prog < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  var counterObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        var el = e.target;
-        var raw = el.getAttribute('data-count') || el.textContent;
-        var suffix = el.getAttribute('data-suffix') || '';
-        var num = parseFloat(raw.replace(/[^0-9.]/g,''));
-        if(!isNaN(num)){
-          animateCounter(el, num, suffix);
-        }
-        counterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  document.querySelectorAll('[data-count]').forEach(function(el){
-    counterObserver.observe(el);
-  });
-})();
-</script>
-
-<script id="knauz-js">
-(function(){
-  var btn=document.getElementById('mob-btn'),nav=document.getElementById('mob-nav');
-  if(btn&&nav){
-    btn.addEventListener('click',function(){btn.classList.toggle('open');nav.classList.toggle('open');});
-    document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!nav.contains(e.target)){btn.classList.remove('open');nav.classList.remove('open');}});
-  }
-  var mainNav=document.getElementById('main-nav');
-  if(mainNav) window.addEventListener('scroll',function(){mainNav.classList.toggle('scrolled',window.scrollY>20);});
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
-  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){io.observe(el);});
-})();
+// Show phone on desktop
+if (window.innerWidth > 1024) {
+  document.getElementById('phone-txt').style.display = 'block';
+}
 </script>
 </body>
 </html>
