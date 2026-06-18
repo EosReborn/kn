@@ -132,26 +132,226 @@
             border-radius: 4px;
         }
     </style>
+
+<style id="knauz-custom">
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-32px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(32px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes countUp {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes pulse-ring {
+    0%   { box-shadow: 0 0 0 0 rgba(60,103,0,.4); }
+    70%  { box-shadow: 0 0 0 16px rgba(60,103,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(60,103,0,0); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left  { opacity:0; transform:translateX(-28px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal-right { opacity:0; transform:translateX(28px);  transition: opacity .7s ease, transform .7s ease; }
+  .reveal-left.visible, .reveal-right.visible { opacity:1; transform:translateX(0); }
+
+  .stat-num { animation: countUp .8s ease both; }
+
+  /* Hero entrance */
+  .hero-title  { animation: fadeInUp .9s ease both; }
+  .hero-sub    { animation: fadeInUp .9s .15s ease both; }
+  .hero-btns   { animation: fadeInUp .9s .3s ease both; }
+  .hero-badge  { animation: fadeInLeft .7s ease both; }
+
+  /* Card hover lift */
+  .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,.12); }
+
+  /* CTA pulse */
+  .btn-pulse { animation: pulse-ring 2.5s infinite; }
+
+  /* ===== MOBILE FIXES ===== */
+  /* Nav mobile hamburger */
+  #mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 8px;
+  }
+  #mobile-menu span {
+    display: block; width: 24px; height: 2px;
+    background: #3c6700;
+    transition: all .3s ease;
+  }
+  #mobile-nav {
+    display: none;
+    position: fixed; top: 80px; left: 0; right: 0;
+    background: white;
+    z-index: 49;
+    flex-direction: column;
+    padding: 16px 24px 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    border-top: 2px solid #e9eef3;
+  }
+  #mobile-nav.open { display: flex; }
+  #mobile-nav a {
+    padding: 12px 0;
+    font-size: 16px; font-weight: 600;
+    color: #171c20;
+    border-bottom: 1px solid #e9eef3;
+    text-decoration: none;
+  }
+  #mobile-nav a:last-child { border-bottom: none; }
+  #mobile-nav a:hover { color: #3c6700; }
+
+  @media (max-width: 768px) {
+    /* Show hamburger, hide desktop nav */
+    #mobile-menu { display: flex !important; }
+
+    /* Hero: full width, better padding */
+    header { min-height: 85vh !important; }
+    .hero-title { font-size: 2rem !important; line-height: 1.2 !important; }
+
+    /* Stats grid: 2 cols on mobile */
+    .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
+
+    /* Services grid: 1 col on mobile */
+    .services-grid { grid-template-columns: 1fr !important; }
+
+    /* Section padding reduction */
+    .section-mobile { padding-top: 48px !important; padding-bottom: 48px !important; }
+
+    /* Footer: stack */
+    .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+    /* Partner logos: 3 col */
+    .partner-grid { grid-template-columns: repeat(3,1fr) !important; gap: 12px !important; }
+
+    /* Cards in 1 col */
+    .md\:grid-cols-2, .md\:grid-cols-3, .lg\:grid-cols-2, .lg\:grid-cols-3 {
+      grid-template-columns: 1fr !important;
+    }
+    .md\:flex-row { flex-direction: column !important; }
+
+    /* Text size */
+    .text-display { font-size: 2rem !important; line-height: 2.5rem !important; }
+    .text-headline-lg { font-size: 1.5rem !important; line-height: 2rem !important; }
+
+    /* Padding */
+    .px-margin-desktop { padding-left: 16px !important; padding-right: 16px !important; }
+    .py-section-padding { padding-top: 48px !important; padding-bottom: 48px !important; }
+
+    /* Phone number: show on mobile */
+    .hidden.sm\:flex { display: flex !important; font-size: 13px; }
+  }
+
+  /* Smooth scroll */
+  html { scroll-behavior: smooth; }
+
+  /* Nav scroll effect handled by JS */
+  nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,.12) !important; }
+</style>
+
+
+<style id="knauz-shared">
+@keyframes fadeUp   { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeLeft { from{opacity:0;transform:translateX(-30px)} to{opacity:1;transform:translateX(0)} }
+@keyframes fadeRight{ from{opacity:0;transform:translateX(30px)} to{opacity:1;transform:translateX(0)} }
+@keyframes pulse-glow { 0%,100%{box-shadow:0 0 0 0 rgba(60,103,0,.35)} 50%{box-shadow:0 0 0 12px rgba(60,103,0,0)} }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+.reveal          { opacity:0; transform:translateY(28px); transition:opacity .7s ease,transform .7s ease; }
+.reveal-left     { opacity:0; transform:translateX(-28px); transition:opacity .7s ease,transform .7s ease; }
+.reveal-right    { opacity:0; transform:translateX(28px); transition:opacity .7s ease,transform .7s ease; }
+.reveal-scale    { opacity:0; transform:scale(.9); transition:opacity .65s ease,transform .65s ease; }
+.reveal.show,.reveal-left.show,.reveal-right.show,.reveal-scale.show { opacity:1;transform:none; }
+.reveal-delay-1  { transition-delay:.1s; }
+.reveal-delay-2  { transition-delay:.2s; }
+.reveal-delay-3  { transition-delay:.3s; }
+.card-hover  { transition:transform .3s ease,box-shadow .3s ease; }
+.card-hover:hover { transform:translateY(-6px); box-shadow:0 20px 44px rgba(0,0,0,.13); }
+.btn-pulse   { animation:pulse-glow 2.4s infinite; }
+.glass-card  { background:rgba(255,255,255,.82); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.4); }
+
+#mob-btn { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; background:none; border:none; }
+#mob-btn span { display:block; width:24px; height:2px; background:#3c6700; border-radius:2px; transition:all .3s; }
+#mob-btn.open span:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
+#mob-btn.open span:nth-child(2){ opacity:0; }
+#mob-btn.open span:nth-child(3){ transform:rotate(-45deg) translate(5px,-5px); }
+#mob-nav { display:none; position:fixed; top:80px; left:0; right:0; background:#fff; z-index:48; flex-direction:column; padding:16px 24px 28px; box-shadow:0 8px 30px rgba(0,0,0,.14); border-top:2px solid #e9eef3; }
+#mob-nav.open { display:flex; }
+#mob-nav a { padding:13px 0; font-size:15px; font-weight:600; color:#171c20; border-bottom:1px solid #e9eef3; text-decoration:none; }
+#mob-nav a:last-child { border:none; }
+#mob-nav a:hover { color:#3c6700; }
+
+@media(max-width:768px) {
+  #mob-btn { display:flex !important; }
+  .desktop-nav { display:none !important; }
+  .text-display { font-size:2.1rem !important; line-height:2.6rem !important; }
+  .text-headline-lg { font-size:1.55rem !important; line-height:2rem !important; }
+  .px-margin-desktop { padding-left:16px !important; padding-right:16px !important; }
+  .py-section-padding { padding-top:52px !important; padding-bottom:52px !important; }
+  .md\:grid-cols-2,.md\:grid-cols-3,.lg\:grid-cols-2,.lg\:grid-cols-3 { grid-template-columns:1fr !important; }
+  .md\:flex-row { flex-direction:column !important; }
+  .footer-grid { grid-template-columns:1fr 1fr !important; }
+}
+html { scroll-behavior:smooth; }
+nav.scrolled { box-shadow:0 4px 24px rgba(0,0,0,.13) !important; }
+details summary { list-style:none; }
+details summary::-webkit-details-marker { display:none; }
+details[open] summary .faq-icon { transform:rotate(180deg); }
+.faq-icon { transition:transform .3s ease; }
+</style>
 </head>
 <body class="bg-surface font-body-md text-on-surface">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-sm h-20">
-<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-full">
-<div class="font-headline-md text-headline-md font-bold text-primary">Knauz Energie</div>
-<div class="hidden md:flex space-x-gutter">
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="index.html">Napelem</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="szolgaltatasok.html">Szolgáltatások</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="palyazatok.html">Pályázatok</a>
-<a class="font-button text-button text-primary border-b-2 border-primary pb-1" href="referencia.html">Referenciák</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="rolunk.html">Rólunk</a>
-<a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="kapcsolat.html">Kapcsolat</a>
-</div>
-<div class="flex items-center gap-4">
-<span class="hidden lg:block text-primary font-bold font-button">+36 20 477 1144</span>
-<button class="bg-secondary text-on-secondary px-6 py-2 rounded-lg font-button hover:opacity-90 active:scale-95 transition-all">Árajánlatot kérek</button>
-</div>
-</div>
+<nav class="fixed top-0 w-full z-50 bg-white shadow-sm h-20" id="main-nav">
+  <div class="flex justify-between items-center max-w-[1280px] mx-auto px-margin-desktop h-full">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="knauz.png" alt="Knauz Energie" class="h-10 w-auto" onerror="this.style.display='none'"/>
+      <span class="font-headline-md text-headline-md font-bold text-primary hidden lg:block">Knauz Energie</span>
+    </a>
+    <div class="desktop-nav hidden md:flex items-center gap-8">
+      <a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="index.html">Napelem</a><a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="szolgaltatasok.html">Szolgáltatások</a><a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="palyazatok.html">Pályázatok</a><a class="font-button text-button text-primary border-b-2 border-primary pb-1" href="referencia.html">Referenciák</a><a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="rolunk.html">Rólunk</a><a class="font-button text-button text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="kapcsolat.html">Kapcsolat</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a class="hidden sm:flex items-center gap-2 text-on-surface-variant font-semibold text-sm" href="tel:+36307223991">
+        <span class="material-symbols-outlined text-primary text-[18px]">phone_in_talk</span>
+        <span class="hidden lg:block">+36 30 722 3991</span>
+      </a>
+      <a href="arajanlatform.html" class="btn-pulse bg-secondary-container text-on-secondary-container px-5 py-2 rounded-lg font-button text-button hover:opacity-90 active:scale-95 transition-all shadow-sm">Árajánlatot kérek</a>
+      <button id="mob-btn" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </div>
 </nav>
+<div id="mob-nav">
+  <a href="index.html">🌞 Napelem</a>
+  <a href="szolgaltatasok.html">🔧 Szolgáltatások</a>
+  <a href="palyazatok.html">📋 Pályázatok</a>
+  <a href="referencia.html">⭐ Referenciák</a>
+  <a href="rolunk.html">🏢 Rólunk</a>
+  <a href="kapcsolat.html">📞 Kapcsolat</a>
+  <a href="arajanlatform.html" style="color:#3c6700;font-weight:700;margin-top:8px;">→ Árajánlatot kérek</a>
+</div>
 <main class="pt-20">
   <section class="bg-primary-container py-20 px-margin-desktop">
     <div class="max-w-container-max mx-auto text-center space-y-6">
@@ -161,7 +361,7 @@
     </div>
   </section>
 
-  <section class="py-section-padding px-margin-desktop bg-surface">
+  <section class="py-section-padding reveal px-margin-desktop bg-surface">
     <div class="max-w-container-max mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
@@ -216,47 +416,54 @@
     </div>
   </section>
 
-  <section class="py-section-padding px-margin-desktop bg-primary text-on-primary text-center">
+  <section class="py-section-padding reveal px-margin-desktop bg-primary text-on-primary text-center">
     <div class="max-w-container-max mx-auto space-y-6">
       <h2 class="font-headline-lg text-headline-lg">Legyen Ön is az ügyfelünk!</h2>
       <a href="napelem-kalkulator.html" class="inline-block bg-secondary-container text-on-secondary-container px-10 py-4 rounded-lg font-button text-button hover:opacity-90 transition-all shadow-lg">Napelem kalkulátor</a>
     </div>
   </section>
 </main>
-<footer class="bg-surface-container-highest w-full pt-section-padding pb-unit">
-<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
-<div class="col-span-1 md:col-span-1">
-<div class="font-headline-md text-headline-md font-bold text-primary mb-6">Knauz Energie</div>
-<p class="text-body-md text-on-surface-variant">A jövő energiája, ma. Prémium napelemes rendszerek és energetikai megoldások.</p>
-</div>
-<div>
-<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Termékek</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Napelem rendszerek</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Hőszivattyúk</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Villanyautó töltés</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Ügyfélszolgálat</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="kapcsolat.html">Kapcsolat</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">FAQ</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="palyazatok.html">Pályázatok</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase">Jogi nyilatkozat</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Adatvédelmi tájékoztató</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">ÁSZF</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface underline transition-colors" href="#">Impresszum</a></li>
-</ul>
-</div>
-</div>
-<div class="max-w-container-max mx-auto px-margin-desktop border-t border-outline-variant mt-16 pt-8 text-center text-body-md text-on-surface-variant">
-            © 2024 Knauz Energie GmbH. All rights reserved.
-        </div>
+<footer class="bg-inverse-surface text-inverse-on-surface pt-16 pb-6">
+  <div class="max-w-[1280px] mx-auto px-margin-desktop footer-grid grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+    <div class="col-span-2 md:col-span-1 space-y-4">
+      <div class="font-bold text-lg text-inverse-primary">Knauz Energie</div>
+      <p class="text-sm text-white/70">9025 Győr, Gyepszél utca 1-3.</p>
+      <div class="space-y-1 text-sm">
+        <a class="block text-white/80 hover:text-white" href="mailto:info@knauz-energie.eu">info@knauz-energie.eu</a>
+        <a class="block text-white/80 hover:text-white" href="mailto:ajanlat@knauz-energie.eu">ajanlat@knauz-energie.eu</a>
+      </div>
+    </div>
+    <div class="space-y-4">
+      <h4 class="font-semibold text-xs uppercase tracking-wider text-white/60">Szolgáltatások</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-white/70 hover:text-white" href="szolgaltatasok.html">Napelemes rendszerek</a></li>
+        <li><a class="text-white/70 hover:text-white" href="szolgaltatasok.html">Hőszivattyúk</a></li>
+        <li><a class="text-white/70 hover:text-white" href="szolgaltatasok.html">Villanyautó töltés</a></li>
+        <li><a class="text-white/70 hover:text-white" href="palyazatok.html">Pályázatírás</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h4 class="font-semibold text-xs uppercase tracking-wider text-white/60">Kapcsolat</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-white/70 hover:text-white" href="tel:+36307223991">+36 30 722 3991</a></li>
+        <li><a class="text-white/70 hover:text-white" href="tel:+36204771144">+36 20 477 1144</a></li>
+        <li><a class="text-white/70 hover:text-white" href="tel:+36204043023">+36 20 404 3023 (iroda)</a></li>
+        <li><a class="text-white/70 hover:text-white" href="kapcsolat.html">Kapcsolat oldal</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h4 class="font-semibold text-xs uppercase tracking-wider text-white/60">Jogi</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-white/70 hover:text-white" href="#">Adatvédelmi tájékoztató</a></li>
+        <li><a class="text-white/70 hover:text-white" href="#">ÁSZF</a></li>
+        <li><a class="text-white/70 hover:text-white" href="#">Impresszum</a></li>
+        <li><a class="text-white/70 hover:text-white" href="https://webshop-knauz-energie.unas.hu/" target="_blank">Webshop →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-[1280px] mx-auto px-margin-desktop border-t border-white/10 pt-6 text-center text-sm text-white/50">
+    © 2025 Knauz Energie Kft. Minden jog fenntartva.
+  </div>
 </footer>
 <script>
         const billSlider = document.getElementById('monthly-bill');
@@ -279,5 +486,101 @@
             });
         });
     </script>
+
+<script id="knauz-anim">
+(function(){
+  // Mobile menu toggle
+  var btn = document.getElementById('mobile-menu');
+  var nav = document.getElementById('mobile-nav');
+  if(btn && nav){
+    btn.addEventListener('click', function(){
+      nav.classList.toggle('open');
+    });
+    document.addEventListener('click', function(e){
+      if(!btn.contains(e.target) && !nav.contains(e.target)) nav.classList.remove('open');
+    });
+  }
+
+  // Nav scroll shadow
+  var navbar = document.querySelector('nav');
+  if(navbar){
+    window.addEventListener('scroll', function(){
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
+
+  // Intersection Observer for reveal animations
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .scroll-reveal').forEach(function(el){
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+
+  // Stagger children of grids
+  document.querySelectorAll('.stagger-children > *').forEach(function(el, i){
+    el.style.transitionDelay = (i * 0.1) + 's';
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+
+  // Counter animation
+  function animateCounter(el, target, suffix){
+    var start = 0;
+    var duration = 1800;
+    var startTime = null;
+    function step(ts){
+      if(!startTime) startTime = ts;
+      var prog = Math.min((ts - startTime)/duration, 1);
+      var val = Math.floor(prog * target);
+      el.textContent = val.toLocaleString('hu-HU') + suffix;
+      if(prog < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var counterObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el = e.target;
+        var raw = el.getAttribute('data-count') || el.textContent;
+        var suffix = el.getAttribute('data-suffix') || '';
+        var num = parseFloat(raw.replace(/[^0-9.]/g,''));
+        if(!isNaN(num)){
+          animateCounter(el, num, suffix);
+        }
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    counterObserver.observe(el);
+  });
+})();
+</script>
+
+<script id="knauz-js">
+(function(){
+  var btn=document.getElementById('mob-btn'),nav=document.getElementById('mob-nav');
+  if(btn&&nav){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');nav.classList.toggle('open');});
+    document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!nav.contains(e.target)){btn.classList.remove('open');nav.classList.remove('open');}});
+  }
+  var mainNav=document.getElementById('main-nav');
+  if(mainNav) window.addEventListener('scroll',function(){mainNav.classList.toggle('scrolled',window.scrollY>20);});
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){io.observe(el);});
+})();
+</script>
 </body>
 </html>
