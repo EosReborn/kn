@@ -2,8 +2,21 @@
 
 <html lang="hu"><head>
 <meta charset="utf-8"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Knauz Energie Kft"/>
+<meta property="og:title" content="Árajánlatot kérek – Knauz Energie Kft"/>
+<meta property="og:description" content="Kérjen személyre szóló árajánlatot napelemes rendszerre, hőszivattyúra vagy villanyszerelésre!"/>
+<meta property="og:image" content="https://www.knauz-energie.hu/wp-content/uploads/2023/12/cropped-512-512-logo.png"/>
+<meta property="og:image:width" content="1024"/>
+<meta property="og:image:height" content="576"/>
+<meta property="og:url" content="https://kekft.vercel.app/arajanlatot-kerek.html"/>
+<meta property="og:locale" content="hu_HU"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Árajánlatot kérek – Knauz Energie Kft"/>
+<meta name="twitter:description" content="Kérjen személyre szóló árajánlatot napelemes rendszerre, hőszivattyúra vagy villanyszerelésre!"/>
+<meta name="twitter:image" content="https://www.knauz-energie.hu/wp-content/uploads/2023/12/cropped-512-512-logo.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Napelem Kalkulátor | Knauz Energie</title>
+<title>Árajánlatot kérek – Knauz Energie Kft</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -320,6 +333,69 @@ details summary { list-style:none; }
 details summary::-webkit-details-marker { display:none; }
 details[open] summary .faq-icon { transform:rotate(180deg); }
 .faq-icon { transition:transform .3s ease; }
+</style>
+
+<style id="knauz-mobile-extra">
+/* ── EXTRA MOBILE FIXES ── */
+/* Prevent horizontal scroll */
+body { overflow-x: hidden; }
+* { box-sizing: border-box; }
+
+/* Nav height on mobile */
+@media(max-width:768px) {
+  nav { height: 64px !important; }
+  #mob-nav { top: 64px !important; }
+  body { padding-top: 0; }
+  
+  /* Fix hero on mobile */
+  header { padding-top: 64px !important; min-height: 85vh !important; }
+  
+  /* Stats floating box hide on very small screens */
+  .hero-stats { display: none !important; }
+  
+  /* Fix grid gaps */
+  .gap-gutter { gap: 16px !important; }
+  
+  /* Wider buttons on mobile */
+  .flex-wrap { gap: 12px !important; }
+  a[href], button { min-height: 44px; }
+  
+  /* Fix partner grid overflow */
+  .partner-grid img { height: 40px !important; }
+  
+  /* Team grid single column on very small */
+  .team-grid { grid-template-columns: 1fr 1fr 1fr !important; }
+  
+  /* Fix about section image */
+  .reveal-right img { height: 300px !important; }
+  
+  /* Float card hide on mobile */
+  .float-anim { display: none !important; }
+  
+  /* FAQ two-col → single col */
+  .md\:grid-cols-2 { grid-template-columns: 1fr !important; }
+  
+  /* CTA section */
+  .cta-block { padding: 24px !important; }
+  .cta-block h2 { font-size: 1.4rem !important; }
+  
+  /* Footer */
+  footer .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 20px !important; }
+  
+  /* Fix text overflow */
+  h1, h2, h3 { word-break: break-word; }
+  
+  /* Services section */
+  section { padding-top: 40px !important; padding-bottom: 40px !important; }
+}
+
+@media(max-width:480px) {
+  .team-grid { grid-template-columns: 1fr !important; }
+  .partner-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  footer .footer-grid { grid-template-columns: 1fr !important; }
+  .text-5xl { font-size: 2rem !important; }
+  .px-10 { padding-left: 20px !important; padding-right: 20px !important; }
+}
 </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface">
