@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+
+<html lang="hu"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Árajánlat - Knauz Energie</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#f7feff",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#e9eef3",
+                        "surface": "#f5faff",
+                        "surface-tint": "#3e6a00",
+                        "surface-bright": "#f5faff",
+                        "secondary-fixed-dim": "#ffb95c",
+                        "on-primary-container": "#f9ffeb",
+                        "secondary-fixed": "#ffddb7",
+                        "inverse-surface": "#2b3135",
+                        "secondary-container": "#ffa924",
+                        "surface-container-highest": "#dee3e8",
+                        "primary-fixed": "#bbf37c",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d5dbdf",
+                        "on-surface-variant": "#43493a",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#0f2000",
+                        "surface-alt": "#FFFFFF",
+                        "secondary": "#845400",
+                        "tertiary-container": "#767474",
+                        "outline": "#737968",
+                        "outline-variant": "#c3c9b5",
+                        "inverse-on-surface": "#ecf1f6",
+                        "surface-container-low": "#eff4f9",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-error": "#ffffff",
+                        "on-surface": "#171c20",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#2d5000",
+                        "growth-green": "#7BB52D",
+                        "surface-variant": "#dee3e8",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#f5faff",
+                        "on-background": "#171c20",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "slate-text": "#334155",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e4e9ee",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#518116",
+                        "tertiary": "#5d5c5b",
+                        "inverse-primary": "#a0d663",
+                        "on-secondary-fixed": "#2a1700",
+                        "primary-fixed-dim": "#a0d663",
+                        "on-tertiary": "#ffffff",
+                        "solar-gold": "#FBB120",
+                        "primary": "#3c6700",
+                        "on-secondary-container": "#6a4200"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "section-padding": "80px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "display": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "button": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest dark:bg-surface-dim shadow-sm h-20 transition-all duration-300">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-full">
+<div class="flex items-center gap-2">
+<img alt="Knauz Energie Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLunk8TFRJXihofOaavKGhyXRM5c5UOBhLgg1EHqxZdJgy9QLgf91uAXtdNwDwyAkxcOTIBuSNie8IJHrq4LSAwF6CN4_9kyhi-7oZB0WdiG8lWfbgC23JejfZazvnMXRQ1f1S6jBWLOnsm8TQAuBPpEzsMJc5rABqsaVzYOhdbiVMjylExb-y05_37osGR5sNRolV9GYEHGbNOnB_n-UfmMFHlzwqK3MCBDh01zVkB6KarDTeMMLUXhGww"/>
+<span class="hidden lg:block font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">Knauz Energie</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant font-medium font-button text-button hover:text-primary transition-colors duration-200" href="index.html">Napelem</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium font-button text-button hover:text-primary transition-colors duration-200" href="szolgaltatasok.html">Hőszivattyú</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium font-button text-button hover:text-primary transition-colors duration-200" href="szolgaltatasok.html">Töltés</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium font-button text-button hover:text-primary transition-colors duration-200" href="szolgaltatasok.html">Szolgáltatások</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden sm:flex items-center gap-2 text-on-surface-variant font-semibold text-button font-button" href="tel:0036204771144">
+<span class="material-symbols-outlined text-primary">phone_in_talk</span>
+                    +49 123 456789
+                </a>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-lg font-button text-button hover:opacity-80 active:scale-95 transition-all shadow-sm">
+                    Get a Quote
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center brightness-75" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvkpIwBMCgRWXF1QgppsQLPeG5SRFlMzo-zhiIuLKV4XDQjTSSXBxJRatPA7LDxyNVT2nDahZqFk1s2kXt1daW3R9fVvpBf1ZLfE25FYhov2vZDW4_HBXqFhKTmrayE6dSHaMpy_ap8gthlHysASDpwK9R7ju4mRjmX2QZrEz3UflxGIfT7DENF1PhVSumeWjIP0hq3dOE8sqp_0yZZAC8fr5wqs0Yr2BDSjGHD5_KS2nFO_16CnJuC2kT0')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-container text-on-primary-container rounded-full font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">eco</span>
+                    FENNTARTHATÓ ENERGIA
+                </div>
+<h1 class="font-display text-display text-on-surface leading-tight">Velünk zöldebb jövőt építhet</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Megújuló Energia Generál Kivitelezője / Nagykereskedelme. Tapasztalt szakértőkkel segítjük otthona energiafüggetlenségének elérését.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-button text-button hover:shadow-lg transition-all flex items-center gap-2">
+                        Napelem kalkulátor
+                        <span class="material-symbols-outlined">calculate</span>
+</button>
+<button class="bg-surface-container-lowest text-primary border-2 border-primary px-8 py-4 rounded-lg font-button text-button hover:bg-primary/5 transition-all">
+                        Szolgáltatásaink
+                    </button>
+</div>
+</div>
+</div>
+<!-- Floating Stats in Hero -->
+<div class="absolute bottom-12 right-margin-desktop hidden lg:grid grid-cols-3 gap-6">
+<div class="glass-card p-6 rounded-xl shadow-sm">
+<div class="text-primary font-bold text-headline-md">15+</div>
+<div class="text-on-surface-variant font-label-caps text-label-caps">ÉV TAPASZTALAT</div>
+</div>
+<div class="glass-card p-6 rounded-xl shadow-sm">
+<div class="text-primary font-bold text-headline-md">1200+</div>
+<div class="text-on-surface-variant font-label-caps text-label-caps">TELEPÍTETT RENDSZER</div>
+</div>
+<div class="glass-card p-6 rounded-xl shadow-sm">
+<div class="text-primary font-bold text-headline-md">24h</div>
+<div class="text-on-surface-variant font-label-caps text-label-caps">GYORS KIVITELEZÉS</div>
+</div>
+</div>
+</header>
+<!-- Services Section -->
+<section class="py-section-padding bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Megújuló energia szolgáltatásaink</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Cégünk elkötelezett amellett, hogy ügyfeleinknek segítsünk a környezetvédelmi célok elérésében és az energiaköltségek csökkentésében.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Klima -->
+<div class="bg-surface-container-lowest p-unit rounded-xl shadow-sm group hover:shadow-xl transition-all duration-300 scroll-reveal">
+<div class="w-full h-48 bg-cover bg-center rounded-lg mb-6 overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLtKaAq-L10vnYEq4AjGFITShrsmxl2abOS8VZCdTm-5ihFkI2P7na7ci3n3Nlq3zwy8sLeSZhpNeLHZLKcyHRt0PukpIOjslQiotsMOLZRCNTdJNP2Ec96WgGdtvGJHIMlBoxcSt229JG7xqtBnD3BUZx4n_m5GeLmH508JKoQbuzj9ogCN4qFvNfRkE5RLcypqacV139mDwiUooepggh_JM9_OC9uA8DMKVDUcNAa5T5wiJiqj4ZITwRQu')"></div>
+<div class="px-gutter pb-gutter space-y-4">
+<h3 class="font-headline-md text-headline-md text-primary">Klíma Rendszerek</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3">Modern klíma rendszereink optimális hőmérsékletet biztosítanak otthonában vagy irodájában, miközben energiatakarékosak.</p>
+<button class="w-full py-3 bg-primary/10 text-primary rounded-lg font-button text-button hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2">
+                            Árajánlatot kérek
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Hoszivattyu -->
+<div class="bg-surface-container-lowest p-unit rounded-xl shadow-sm group hover:shadow-xl transition-all duration-300 scroll-reveal">
+<div class="w-full h-48 bg-cover bg-center rounded-lg mb-6 overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLs9SBnHM1KLLGSYSC75OYscCGptLRgscsrnRK-drax8Slu9K28XJR8_cvqkV_uxNaWpJSqv9aWW8gaE7uaLwTTJg6hy6EMr4OAT2_nJ0VTPb7XTj8dZCLNSrbJpEmDDHxePQkjVoAZF3HBFdfRcrg2HXydZADX1Axc9HSu433SJCSjrMT-Rm0KMxXewXRC6AQQBdAEDY8_UqD1uH9oAsY1C7Sht9KkKMkgWjRaz2NoqtLNyf4grWFsK2zg')"></div>
+<div class="px-gutter pb-gutter space-y-4">
+<h3 class="font-headline-md text-headline-md text-primary">Hőszivattyús Rendszerek</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3">Hőszivattyúink hatékonyan hasznosítják a megújuló energiaforrásokat a fűtés és hűtés során.</p>
+<button class="w-full py-3 bg-primary/10 text-primary rounded-lg font-button text-button hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2">
+                            Árajánlatot kérek
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Villanyszereles -->
+<div class="bg-surface-container-lowest p-unit rounded-xl shadow-sm group hover:shadow-xl transition-all duration-300 scroll-reveal">
+<div class="w-full h-48 bg-cover bg-center rounded-lg mb-6 overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLuqke8t7UEJJZgot0_CWpYZVcKCIhdCTId0WoTXpInvC0u8pm9y62wgXwelRHa5Bbl_tE0FwjMms0eVkw-GY_Bn7PrNbQc-Jq5ENivd5y8wg7WHGY_SzsGZ21WI_E4vATdQMsUCmaY3oKIji8-HPNeflefnzNjHp_C14xO4LjYUW_4GXtzQWFGYDL_CxZ2Ejy41yvMguBlVNowyFbuKQF39Ypzj4BxVY55XksfCWpvIJEssauPfmMXAhVo')"></div>
+<div class="px-gutter pb-gutter space-y-4">
+<h3 class="font-headline-md text-headline-md text-primary">Teljeskörű Villanyszerelés</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3">Tapasztalt villanyszerelőink vállalják otthona vagy vállalkozása elektromos rendszereinek tervezését.</p>
+<button class="w-full py-3 bg-primary/10 text-primary rounded-lg font-button text-button hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2">
+                            Árajánlatot kérek
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Autotolto -->
+<div class="bg-surface-container-lowest p-unit rounded-xl shadow-sm group hover:shadow-xl transition-all duration-300 scroll-reveal">
+<div class="w-full h-48 bg-cover bg-center rounded-lg mb-6 overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvu5rlzc_xbnsJKJXsSv_2v3tbIYgarzcSQm5m_d-74kSkXAeu9a0N5e_Nuoz6GtaaUPtVL_DYtAL_b_JCSf1f5HUk8oOICeNzSkWBghhBiR3pFDBOiOnemqqyWCQz9gx1EUB662u2clhHTqrucCu324YDUmW6OoAv9yEl3DA3CQPh-jgji_f4bvvWIlkfsfGP9qF3WbF7HaASDEJdjW07DVbPuHA5vSC2JDOVRA7ukjxFrUdPDZ-cYXCUJ')"></div>
+<div class="px-gutter pb-gutter space-y-4">
+<h3 class="font-headline-md text-headline-md text-primary">Elektromos Autótöltő</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3">Segítünk az otthoni vagy vállalati töltőállomás telepítésében és beüzemelésében.</p>
+<button class="w-full py-3 bg-primary/10 text-primary rounded-lg font-button text-button hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2">
+                            Árajánlatot kérek
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Palyazat -->
+<div class="bg-primary p-unit rounded-xl shadow-sm group hover:shadow-xl transition-all duration-300 flex flex-col justify-center text-center scroll-reveal">
+<div class="p-gutter space-y-6 text-on-primary">
+<span class="material-symbols-outlined text-display" style="font-variation-settings: 'FILL' 1;">description</span>
+<h3 class="font-headline-md text-headline-md">Teljeskörű Pályázatírás</h3>
+<p class="text-primary-fixed text-body-md">Mi nem csak megírjuk a pályázatodat, de melletted maradunk a támogatási időszak végéig is.</p>
+<button class="w-full py-4 bg-secondary-container text-on-secondary-container rounded-lg font-button text-button hover:opacity-90 transition-all">
+                            PÁLYÁZATI TÁMOGATÁS
+                        </button>
+</div>
+</div>
+<!-- Webshop Promo -->
+<div class="bg-surface-container p-unit rounded-xl shadow-sm group hover:shadow-xl transition-all duration-300 flex flex-col justify-center text-center scroll-reveal">
+<div class="p-gutter space-y-6">
+<span class="material-symbols-outlined text-display text-primary">shopping_cart</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Webshop Kínálat</h3>
+<p class="text-on-surface-variant text-body-md">Nagykereskedelmi árszint, akár kis mennyiségben magánszemélyeknek is.</p>
+<a class="inline-block text-primary font-bold hover:underline" href="palyazatok.html">Böngésszen most →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Us Section -->
+<section class="py-section-padding bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-square bg-primary/10 rounded-full absolute -top-12 -left-12 w-64 h-64 blur-3xl"></div>
+<div class="relative z-10 space-y-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Kik vagyunk mi?</h2>
+<p class="text-on-surface-variant text-body-lg">A Knauz-Energie-nél az ügyfél elégedettsége az elsődleges szempont. Együtt dolgozunk ügyfeleinkkel az optimális energiahatékonysági megoldások megtalálása érdekében.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="space-y-3">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h4 class="font-bold text-on-surface">Szakértelem</h4>
+<p class="text-on-surface-variant text-body-md">Több éves tapasztalat a napenergia és klíma rendszerek terén.</p>
+</div>
+<div class="space-y-3">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">thumb_up</span>
+</div>
+<h4 class="font-bold text-on-surface">Ügyfélközpontúság</h4>
+<p class="text-on-surface-variant text-body-md">Az Ön igényeire szabott megoldások a tervezéstől a kivitelezésig.</p>
+</div>
+<div class="space-y-3">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">high_quality</span>
+</div>
+<h4 class="font-bold text-on-surface">Kiváló Minőség</h4>
+<p class="text-on-surface-variant text-body-md">Kizárólag prémium alapanyagok és technológiai megoldások.</p>
+</div>
+<div class="space-y-3">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">nature_people</span>
+</div>
+<h4 class="font-bold text-on-surface">Zöld Jövő</h4>
+<p class="text-on-surface-variant text-body-md">Elkötelezettség az ökológiai lábnyom csökkentése mellett.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative group">
+<img class="rounded-2xl shadow-2xl w-full h-[600px] object-cover transition-transform duration-500 group-hover:scale-[1.02]" data-alt="A modern, industrial office space showing solar energy experts collaborating around a blueprint-covered table. The room is bright with natural sunlight streaming through large windows, reflecting the renewable energy theme. The aesthetic is clean and high-tech with hints of green and orange branding colors throughout the professional environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKmroAvFa7k6pjS7yGtPH2jO29W3Ff1Htiy9yoN84MLs7IEsOQs4ud-_d2R6QGcOwtDlkDCKpR-6Hza7AkmUQo5cZHAZl7S0lyF4FoH3smL7HoZCydOxsk6_-PLwOUqQXbdyZEI9K1Nf7iSKrr9xBlfFwbGSVrWU6w8UD027qG3nLzWeDw4G2QzDhbik2c9nfxrbWkW8HifdcGsV049CqldPJnhTymjulhsseuVZj7X8dPMveNFQimzIu4gvhpJlByNwD0Udr1jXkt"/>
+<div class="absolute -bottom-6 -left-6 glass-card p-8 rounded-2xl shadow-xl max-w-xs">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div class="font-bold text-on-surface">Gyorsaság</div>
+</div>
+<p class="text-on-surface-variant text-body-md italic">"Amihez másoknak 3-4 nap szükséges, ők 1 nap alatt megcsinálják!"</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-section-padding bg-primary text-on-primary relative overflow-hidden">
+
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-center mb-16">Cégünk számokban</h2>
+<div class="grid grid-cols-2 lg:grid-cols-5 gap- gutter text-center">
+<div class="space-y-2">
+<div class="text-display font-display text-secondary-container">15+</div>
+<div class="font-label-caps text-label-caps uppercase">év tapasztalat</div>
+</div>
+<div class="space-y-2">
+<div class="text-display font-display text-secondary-container">1200+</div>
+<div class="font-label-caps text-label-caps uppercase">telepített rendszer</div>
+</div>
+<div class="space-y-2">
+<div class="text-display font-display text-secondary-container">4.5M</div>
+<div class="font-label-caps text-label-caps uppercase">KWH megtermelt energia</div>
+</div>
+<div class="space-y-2">
+<div class="text-display font-display text-secondary-container">1200</div>
+<div class="font-label-caps text-label-caps uppercase">Tonna CO2 megtakarítás</div>
+</div>
+<div class="space-y-2">
+<div class="text-display font-display text-secondary-container">1</div>
+<div class="font-label-caps text-label-caps uppercase">Központi iroda</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-padding bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-center mb-16">Ügyfeleink véleménye rólunk</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-low p-gutter rounded-xl shadow-sm border-t-4 border-primary">
+<div class="flex gap-1 text-solar-gold mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-6">„Amihez másoknak 3-4 nap szükséges, ők 1 nap alatt megcsinálják, és ez mégsem megy a minőség rovására! Szuperek!"</p>
+<div>
+<div class="font-bold text-on-surface">Péter</div>
+<div class="text-on-surface-variant text-label-caps">Balatonalmádi</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-gutter rounded-xl shadow-sm border-t-4 border-primary">
+<div class="flex gap-1 text-solar-gold mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-6">„Minden a megbeszéltek szerint zajlott, nem volt félrekommunikálás. Máskor is Gergő csapatát fogom keresni."</p>
+<div>
+<div class="font-bold text-on-surface">Zalán</div>
+<div class="text-on-surface-variant text-label-caps">Győrszentiván</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-gutter rounded-xl shadow-sm border-t-4 border-primary">
+<div class="flex gap-1 text-solar-gold mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-6">„Korrektek a srácok, segítőkészek és rugalmasak. Mi napelemeket vásároltunk és telepítettünk, minden rendben volt."</p>
+<div>
+<div class="font-bold text-on-surface">Tibor</div>
+<div class="text-on-surface-variant text-label-caps">Zalaegerszeg</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-padding bg-surface-container-lowest">
+<div class="max-w-3xl mx-auto px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-center mb-12">Gyakran Ismételt Kérdések</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container-low p-6 rounded-xl transition-all duration-300 open:bg-surface-alt open:shadow-md">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-on-surface">
+                        Mennyi időt vesz igénybe a szerelés?
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-4 text-on-surface-variant">
+                        Ez a válasz nagyban függ a megrendeléstől, de büszkék vagyunk rá, hogy gyorsan tudunk dolgozni anélkül, hogy ez a minőséget befolyásolná, így általában 1 nap alatt végzünk.
+                    </div>
+</details>
+<details class="group bg-surface-container-low p-6 rounded-xl transition-all duration-300 open:bg-surface-alt open:shadow-md">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-on-surface">
+                        Hány évig működnek a napelemek?
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-4 text-on-surface-variant">
+                        A gyártók folyamatosan törekednek az élettartam meghosszabbítására, így a mai napelemekkel már 35-40 évre, inverterekkel pedig 10-15 évre is tervezhetünk.
+                    </div>
+</details>
+<details class="group bg-surface-container-low p-6 rounded-xl transition-all duration-300 open:bg-surface-alt open:shadow-md">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-on-surface">
+                        Mi az az inverter, miért kell ez nekem?
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-4 text-on-surface-variant">
+                        Az inverter az a készülék ami az egyenáramot váltóárammá, vagyis a napsütésből érkező energiát villamos energiává alakítja. A legkorszerűbb inverterek képesek az energiatermelés optimalizálására is.
+                    </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Calculator CTA -->
+<section class="py-section-padding bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="bg-gradient-to-br from-primary to-primary-container rounded-3xl p-margin-desktop text-on-primary flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<div class="flex-1 space-y-6">
+<h2 class="font-headline-lg text-headline-lg">2 perces árajánlat</h2>
+<p class="text-primary-fixed text-body-lg">Napelem kalkulátorunk segítségével számold ki a rendszer méretét, és nézd meg előzetes árajánlatunkat. Küldd be nekünk a kalkulációt és egyeztetünk időpontot!</p>
+</div>
+<div class="flex-shrink-0">
+<button class="bg-secondary-container text-on-secondary-container px-12 py-5 rounded-full font-headline-md text-headline-md hover:scale-105 transition-transform shadow-xl flex items-center gap-4">
+                        Napelem kalkulátor
+                        <span class="material-symbols-outlined">rocket_launch</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full pt-section-padding pb-unit">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="space-y-6">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Knauz Energie</div>
+<p class="font-body-md text-on-surface-variant">9025 Győr Gyepszél utca 1-3.</p>
+<div class="space-y-2">
+<a class="block text-on-surface hover:text-primary transition-colors" href="mailto:info@knauz-energie.eu">info@knauz-energie.eu</a>
+<a class="block text-on-surface hover:text-primary transition-colors" href="mailto:ajanlat@knauz-energie.eu">ajanlat@knauz-energie.eu</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-on-surface">ÜGYINTÉZÉS</h4>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-on-surface hover:underline transition-all" href="#">Impresszum</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline transition-all" href="#">Adatvédelmi tájékoztató</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline transition-all" href="#">ÁSZF</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-on-surface">KAPCSOLAT</h4>
+<div class="flex flex-col gap-3 font-body-md">
+<p class="text-on-surface-variant">Értékesítés: +36 20 477 1144</p>
+<p class="text-on-surface-variant">Iroda: +36 20 404 3023</p>
+<a class="text-primary font-bold hover:underline" href="#">Knauz Energie Store</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-on-surface">SOCIAL</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-on-surface-variant rounded-full flex items-center justify-center text-surface-container-lowest hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 bg-on-surface-variant rounded-full flex items-center justify-center text-surface-container-lowest hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-section-padding pt-8 border-t border-outline-variant/30">
+<p class="font-body-md text-on-surface-variant text-sm">© 2024 Knauz Energie GmbH. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions and Scroll Reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+            // Navbar behavior on scroll
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-lg');
+                    nav.classList.add('h-16');
+                    nav.classList.remove('h-20');
+                } else {
+                    nav.classList.remove('shadow-lg');
+                    nav.classList.remove('h-16');
+                    nav.classList.add('h-20');
+                }
+            });
+        });
+    </script>
+</body></html<main class="pt-20">
+  <section class="py-section-padding px-margin-desktop bg-surface">
+    <div class="max-w-container-max mx-auto max-w-2xl">
+      <div class="text-center mb-12 space-y-4">
+        <span class="inline-block font-label-caps text-label-caps text-primary bg-primary/10 px-4 py-1 rounded-full">ÁRAJÁNLAT</span>
+        <h1 class="font-headline-lg text-headline-lg text-on-surface">Kérjen személyre szóló árajánlatot</h1>
+        <p class="font-body-md text-on-surface-variant">Töltse ki az alábbi űrlapot és 24 órán belül felvesszük Önnel a kapcsolatot.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="font-label-caps text-label-caps text-on-surface-variant" for="nev">NÉV *</label>
+            <input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary p-3 font-body-md text-body-md rounded-t-lg outline-none transition-colors" id="nev" placeholder="Minta János" type="text"/>
+          </div>
+          <div class="space-y-2">
+            <label class="font-label-caps text-label-caps text-on-surface-variant" for="tel">TELEFON *</label>
+            <input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary p-3 font-body-md text-body-md rounded-t-lg outline-none transition-colors" id="tel" placeholder="+36 20 xxx xxxx" type="tel"/>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="font-label-caps text-label-caps text-on-surface-variant" for="email">E-MAIL *</label>
+          <input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary p-3 font-body-md text-body-md rounded-t-lg outline-none transition-colors" id="email" placeholder="janos@pelda.hu" type="email"/>
+        </div>
+        <div class="space-y-2">
+          <label class="font-label-caps text-label-caps text-on-surface-variant" for="szolg">SZOLGÁLTATÁS</label>
+          <select class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary p-3 font-body-md text-body-md rounded-t-lg outline-none transition-colors" id="szolg">
+            <option>Napelemes rendszer</option>
+            <option>Hőszivattyú</option>
+            <option>Villanyautó töltő</option>
+            <option>Klíma</option>
+            <option>Pályázatírás</option>
+            <option>Egyéb</option>
+          </select>
+        </div>
+        <div class="space-y-2">
+          <label class="font-label-caps text-label-caps text-on-surface-variant" for="uzenet">MEGJEGYZÉS</label>
+          <textarea class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary p-3 font-body-md text-body-md rounded-t-lg outline-none transition-colors" id="uzenet" placeholder="Írja le miben segíthetünk..." rows="4"></textarea>
+        </div>
+        <button class="w-full bg-primary text-on-primary py-4 rounded-lg font-button text-button hover:opacity-90 active:scale-95 transition-all shadow-sm">Árajánlat kérése</button>
+        <p class="font-body-md text-on-surface-variant text-center text-sm">Az adatok megadásával elfogadja <a href="#" class="text-primary underline">Adatvédelmi tájékoztatónkat</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full pt-section-padding pb-unit">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="space-y-6">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Knauz Energie</div>
+<p class="font-body-md text-on-surface-variant">9025 Győr Gyepszél utca 1-3.</p>
+<div class="space-y-2">
+<a class="block text-on-surface hover:text-primary transition-colors" href="mailto:info@knauz-energie.eu">info@knauz-energie.eu</a>
+<a class="block text-on-surface hover:text-primary transition-colors" href="mailto:ajanlat@knauz-energie.eu">ajanlat@knauz-energie.eu</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-on-surface">ÜGYINTÉZÉS</h4>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-on-surface hover:underline transition-all" href="#">Impresszum</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline transition-all" href="#">Adatvédelmi tájékoztató</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline transition-all" href="#">ÁSZF</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-on-surface">KAPCSOLAT</h4>
+<div class="flex flex-col gap-3 font-body-md">
+<p class="text-on-surface-variant">Értékesítés: +36 20 477 1144</p>
+<p class="text-on-surface-variant">Iroda: +36 20 404 3023</p>
+<a class="text-primary font-bold hover:underline" href="#">Knauz Energie Store</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-on-surface">SOCIAL</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-on-surface-variant rounded-full flex items-center justify-center text-surface-container-lowest hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 bg-on-surface-variant rounded-full flex items-center justify-center text-surface-container-lowest hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-section-padding pt-8 border-t border-outline-variant/30">
+<p class="font-body-md text-on-surface-variant text-sm">© 2024 Knauz Energie GmbH. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions and Scroll Reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+            // Navbar behavior on scroll
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-lg');
+                    nav.classList.add('h-16');
+                    nav.classList.remove('h-20');
+                } else {
+                    nav.classList.remove('shadow-lg');
+                    nav.classList.remove('h-16');
+                    nav.classList.add('h-20');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
